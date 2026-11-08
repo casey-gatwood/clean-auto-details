@@ -283,6 +283,21 @@
   .addon-media img,.addon .ba-pair img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
   .addon .ba-pair{margin-bottom:16px}
 
+  /* ---------- classic vehicles ---------- */
+  .classic-intro{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center;margin-bottom:34px}
+  @media (max-width:860px){ .classic-intro{grid-template-columns:1fr;gap:26px} }
+  .classic-intro p{color:var(--ink-2)}
+  .classic-logo{margin:0;border-radius:var(--radius);overflow:hidden;background:#000;box-shadow:var(--shadow)}
+  .classic-logo img{width:100%;height:320px;object-fit:contain;background:#000}
+  @media (max-width:640px){ .classic-logo img{height:260px} }
+  .classic-services{list-style:none;margin:18px 0 22px;padding:0}
+  .classic-services li{padding:8px 0 8px 26px;position:relative;color:var(--ink-2);border-top:1px solid var(--line)}
+  .classic-services li:first-child{border-top:0}
+  .classic-services li::before{content:"";position:absolute;left:2px;top:15px;width:12px;height:7px;border-left:3px solid var(--accent-bright);border-bottom:3px solid var(--accent-bright);transform:rotate(-45deg)}
+  .classic-services li b{color:var(--ink)}
+  .classic-actions{display:flex;flex-wrap:wrap;gap:10px}
+  @media (max-width:640px){ .classic-actions .btn{flex:1} }
+
   /* ---------- work gallery ---------- */
   .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   @media (max-width:760px){ .work-grid{grid-template-columns:1fr} }
@@ -521,6 +536,7 @@
       <a href="#quiz">Find Your Detail</a>
       <a href="#ceramic">Ceramic Coating</a>
       <a href="#more">More Services</a>
+      <a href="#classics">Classics</a>
       <a href="#work">Our Work</a>
       <a href="#reviews">Reviews</a>
       <a href="#drawing">100 Spot Drawing</a>
@@ -823,6 +839,87 @@
           </div>
           <span class="price">From $50 per lens</span>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLASSIC VEHICLES -->
+  <section class="section" id="classics" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Resurrect Your Ride</span>
+        <h2>Classic Vehicles</h2>
+        <p>We take a lot of pride in everyone&rsquo;s ride — and classics get extra care. Whether it&rsquo;s old paint, fresh paint, or a full restoration coming back to life, we treat every classic like it&rsquo;s our own.</p>
+      </div>
+
+      <div class="classic-intro">
+        <div>
+          <p>Old paint needs a gentle hand. Fresh paint needs patience. And a restoration in progress needs someone who respects the work that&rsquo;s already in it. That&rsquo;s how we approach every classic that rolls into the shop — no rushing, no shortcuts, and nothing done to it we wouldn&rsquo;t do to our own.</p>
+          <ul class="classic-services">
+            <li><b>Paint correction &amp; buffing</b> — old paint brought back to life, swirls and dullness corrected by hand and machine</li>
+            <li><b>Ceramic coating</b> — long-term protection for classic paint, with 2, 5 &amp; 7-year options and warranties</li>
+            <li><b>Custom bodywork &amp; paint</b> — from mid-restoration bodywork to fresh paint in the booth, done in-house</li>
+          </ul>
+          <div class="classic-actions">
+            <a class="btn btn-amber" href="tel:+19183299259">Call for a Classic Quote</a>
+            <a class="btn btn-ghost" href="sms:+19183299259">Text (918) 329-9259</a>
+          </div>
+        </div>
+        <figure class="classic-logo"><img src="asset-009.jpg" alt="Clean Auto Details logo with a devil driving a classic car — Resurrect Your Ride" loading="lazy" /></figure>
+      </div>
+
+      <div class="work-grid">
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-045.jpg" alt="Freshly painted green Jeep Wagoneer in the paint booth, wheels covered, Oct 12, 2026" loading="lazy" /><span class="ba-tag after">Fresh Paint</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Jeep Wagoneer — Fresh Paint</h3>
+            <p>Green Jeep Wagoneer, Oct 12, 2026. Fresh out of paint in the booth — a classic wagon with a brand-new shine to protect.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-046.jpg" alt="Old school GMC pickup in the shop mid-bodywork, panels sanded and filler work in progress, Oct 12, 2026" loading="lazy" /><span class="ba-tag">In Progress</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>GMC Pickup — Bodywork in Progress</h3>
+            <p>Old school GMC pickup, Oct 12, 2026. Caught mid-bodywork in the shop — every panel being worked back toward straight and smooth.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-047.jpg" alt="Green Chevy Nova project car outside the shop with the hood open and engine bay exposed, Oct 12, 2026" loading="lazy" /><span class="ba-tag">Project Car</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Chevy Nova — Project Car</h3>
+            <p>Green Chevy Nova, Oct 12, 2026. Hood open and work underway — a project car coming back to life, one step at a time.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-003.jpg" alt="Black Mustang GT paint after buffing, reflecting the sky and trees like a mirror, Sep 23, 2026" loading="lazy" /><span class="ba-tag after">After Buffing</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Mustang GT — Buffing</h3>
+            <p>Black Mustang GT, Sep 23, 2026. Paint correction and buffing brought this classic&rsquo;s black paint back to a mirror gloss.</p>
+          </div>
+        </article>
+
+        <article class="work-card wide">
+          <div class="work-media cols-1">
+            <video src="asset-017.mp4" poster="asset-018.jpg" loop playsinline controls preload="metadata" aria-label="Video of a black Pontiac Trans Am rolling out of the shop garage after a fresh paint job, with music"></video>
+          </div>
+          <div class="work-body">
+            <h3>Pontiac Trans Am — Fresh Paint Reveal</h3>
+            <p>Black Pontiac Trans Am rolling out of the shop after a fresh paint job — the moment a classic comes back to life. Tap play to hear the music.</p>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
