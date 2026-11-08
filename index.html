@@ -1,0 +1,1587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Clean Auto Details — auto detailing, paint correction, and ceramic coating in Warner, Oklahoma. Keep em shinning. Book online or call (918) 329-9259." />
+<link rel="icon" href="data:," />
+<title>Clean Auto Details</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#ffffff;
+    --bg-soft:#e9f2fc;
+    --surface:#ffffff;
+    --surface-2:#eef5fd;
+    --ink:#0a2540;
+    --ink-2:#35506e;
+    --ink-3:#5d7a96;
+    --line:#cbdef1;
+    --accent:#0060c9;
+    --accent-strong:#004e9e;
+    --accent-bright:#006fe0;
+    --accent-ink:#ffffff;
+    --on-dark:#7cc4ff;
+    --dark-band:#063a6e;
+    --dark-band-2:#0a4a87;
+    --dark-ink:#ffffff;
+    --dark-ink-2:#cfe4f7;
+    --ok:#1d7a3d;
+    --warn-bg:#e9f2fc;
+    --warn-ink:#0b3d6e;
+    --shadow:0 10px 30px rgba(0,55,110,.12);
+    --shadow-lg:0 22px 48px rgba(0,45,95,.18);
+    --radius:14px;
+    --radius-lg:20px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#061a30;
+      --bg-soft:#082440;
+      --surface:#0a2a4a;
+      --surface-2:#0e3358;
+      --ink:#f0f7ff;
+      --ink-2:#c2daf2;
+      --ink-3:#8fb0d0;
+      --line:#1c4a74;
+      --accent:#6db3ff;
+      --accent-strong:#8ec2ff;
+      --accent-bright:#3d9bff;
+      --accent-ink:#04263f;
+      --on-dark:#7cc4ff;
+      --dark-band:#04263f;
+      --dark-band-2:#073763;
+      --dark-ink:#ffffff;
+      --dark-ink-2:#cfe4f7;
+      --shadow:0 10px 30px rgba(0,0,0,.45);
+      --ok:#5fc983;
+      --warn-bg:#0a2f52;
+      --warn-ink:#bcdcff;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  /* ---------- classic pinstriping — fixed side framing ---------- */
+  body::before,body::after{
+    content:"";position:fixed;top:0;bottom:0;width:16px;z-index:120;pointer-events:none;
+  }
+  body::before{
+    left:0;
+    background:linear-gradient(to right,
+      transparent 0 3px,
+      var(--accent) 3px 6px,
+      transparent 6px 9px,
+      var(--on-dark) 9px 10px,
+      transparent 10px 13px,
+      var(--accent-bright) 13px 14px,
+      transparent 14px 16px);
+  }
+  body::after{
+    right:0;
+    background:linear-gradient(to left,
+      transparent 0 3px,
+      var(--accent) 3px 6px,
+      transparent 6px 9px,
+      var(--on-dark) 9px 10px,
+      transparent 10px 13px,
+      var(--accent-bright) 13px 14px,
+      transparent 14px 16px);
+  }
+  @media (max-width:640px){
+    body::before,body::after{width:8px}
+    body::before{
+      background:linear-gradient(to right,
+        transparent 0 1px,
+        var(--accent) 1px 3px,
+        transparent 3px 5px,
+        var(--on-dark) 5px 6px,
+        transparent 6px 8px);
+    }
+    body::after{
+      background:linear-gradient(to left,
+        transparent 0 1px,
+        var(--accent) 1px 3px,
+        transparent 3px 5px,
+        var(--on-dark) 5px 6px,
+        transparent 6px 8px);
+    }
+  }
+  a{color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){ a{color:var(--accent)} }
+  :focus-visible{outline:3px solid var(--accent-bright);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:"Barlow Condensed","Barlow",sans-serif;text-transform:uppercase;letter-spacing:.015em;line-height:1.02;margin:0;font-weight:700}
+  .section{padding:84px 0}
+  .section-head{max-width:760px;margin-bottom:38px}
+  .section-head h2{font-size:clamp(2.15rem,4.8vw,3.2rem);letter-spacing:.01em}
+  .section-head h2::after{content:"";display:block;width:56px;height:4px;background:var(--accent-bright);border-radius:99px;margin-top:16px}
+  .section-head p{color:var(--ink-2);margin:14px 0 0;font-size:1.08rem;line-height:1.6}
+  .tag{display:inline-flex;align-items:center;gap:8px;font-family:"Barlow Condensed",sans-serif;font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.82rem;color:var(--accent-strong);margin-bottom:12px}
+  .tag::before{content:"";width:22px;height:2px;background:var(--accent-bright);display:inline-block}
+  @media (prefers-color-scheme: dark){ .tag{color:var(--accent)} }
+
+  /* ---------- top bar / nav ---------- */
+  .topbar{background:var(--dark-band);color:var(--dark-ink-2);font-size:.9rem}
+  .topbar .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:center;padding-top:8px;padding-bottom:8px}
+  .topbar strong{color:var(--dark-ink);font-weight:600}
+  .topbar a{color:var(--dark-ink);text-decoration:none;font-weight:600}
+  .topbar .spacer{flex:1}
+  header.site{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 6px 24px rgba(0,45,95,.08)}
+  header.site .wrap{display:flex;align-items:center;gap:18px;padding-top:14px;padding-bottom:14px}
+  .wordmark{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.45rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);text-decoration:none;line-height:1;white-space:nowrap}
+  .wordmark span{color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){ .wordmark span{color:var(--accent)} }
+  nav.main{margin-left:auto;display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+  nav.main a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:.98rem;padding:8px 10px;border-radius:8px}
+  nav.main a:hover{color:var(--ink);background:var(--surface-2)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;
+    font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
+    font-size:1.14rem;padding:14px 26px;border-radius:10px;line-height:1.1;transition:transform .15s ease, background .15s ease, box-shadow .15s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-amber{background:var(--accent-bright);color:var(--accent-ink);box-shadow:0 10px 24px rgba(0,111,224,.32)}
+  .btn-amber:hover{background:#005bb5;box-shadow:0 12px 28px rgba(0,91,181,.38);transform:translateY(-1px)}
+  @media (prefers-color-scheme: dark){ .btn-amber:hover{background:#63b1ff} }
+  .btn-dark{background:var(--ink);color:var(--bg)}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--ink-3)}
+  .btn-sm{font-size:1rem;padding:9px 16px}
+  header.site .btn{margin-left:8px}
+  @media (max-width:760px){ nav.main{display:none} header.site .btn{margin-left:auto} header.site .btn-sm{font-size:.95rem;padding:8px 12px;letter-spacing:.04em} .wordmark{font-size:1.22rem} header.site .wrap{gap:10px;padding-left:14px;padding-right:14px} }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;background:var(--dark-band);color:var(--dark-ink);overflow:hidden}
+  .hero img.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(4,32,64,.93) 30%,rgba(4,32,64,.58) 65%,rgba(4,32,64,.28))}
+  .hero .wrap{position:relative;padding-top:88px;padding-bottom:88px;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
+  .hero-rating{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px 12px;background:#fff;color:#0a2540;border-radius:999px;padding:8px 16px 8px 12px;margin-top:22px;text-decoration:none;box-shadow:0 10px 28px rgba(0,0,0,.28);font-size:.97rem;line-height:1.2}
+  .hero-rating:hover{box-shadow:0 12px 32px rgba(0,0,0,.34)}
+  .hero-rating .stars{color:#f2a900;font-size:1.12rem;letter-spacing:.08em;line-height:1}
+  .hero-rating strong{font-weight:700}
+  .hero-rating .muted{color:#4a6480}
+  .hero-rating .chev{font-weight:700;color:var(--accent-strong)}
+  @media (max-width:560px){
+    .hero-rating{flex-wrap:nowrap;max-width:100%;padding:8px 14px 8px 12px;font-size:.9rem;gap:8px}
+    .hero-rating .stars{font-size:1rem;flex:none}
+    .hero-rating .chev{display:none}
+    .hero-rating .muted{display:none}
+  }
+  .hero-logo{margin:0}
+  .hero-logo img{width:100%;height:auto;border-radius:var(--radius);border:1px solid rgba(255,255,255,.28);box-shadow:0 18px 44px rgba(0,0,0,.4)}
+  @media (max-width:860px){ .hero .wrap{grid-template-columns:1fr;gap:30px} .hero-logo{max-width:430px} }
+  .hero .domain{font-family:"Barlow Condensed",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--on-dark);font-weight:600;font-size:.95rem}
+  .hero h1{font-size:clamp(3.2rem,9vw,6rem);margin:14px 0 6px;color:#fff;letter-spacing:.005em;text-wrap:balance}
+  .hero h1 .dot{color:var(--on-dark)}
+  .hero p.lede{font-size:clamp(1.08rem,2.4vw,1.3rem);color:#e2eefb;max-width:620px;margin:14px 0 0}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+  .btn-outline-light{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55)}
+  .btn-outline-light:hover{border-color:#fff}
+  .hero-facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:38px}
+  .hero-facts .fact{background:rgba(4,32,64,.75);border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:10px 14px;font-size:.95rem;color:#eef5fd}
+  .hero-facts .fact b{display:block;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:.78rem;color:var(--on-dark);font-weight:600}
+  .hero-facts a{color:#fff}
+
+  /* ---------- strip ---------- */
+  .strip{background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 10px 30px rgba(0,45,95,.06)}
+  .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .strip .cell{padding:24px 18px;border-left:1px solid var(--line)}
+  .strip .cell:first-child{border-left:0;padding-left:0}
+  .strip .cell b{font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;font-size:1.22rem;letter-spacing:.03em;display:block;color:var(--ink)}
+  .strip .cell span{color:var(--ink-2);font-size:.95rem;line-height:1.45;display:block;margin-top:3px}
+  @media (max-width:820px){ .strip .wrap{grid-template-columns:1fr 1fr} .strip .cell{border-left:0;padding-left:0} }
+
+  /* ---------- packages ---------- */
+  .pkg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:980px){ .pkg-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:640px){ .pkg-grid{grid-template-columns:1fr} }
+  .pkg{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:box-shadow .18s ease, transform .18s ease}
+  .pkg:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+  .pkg.featured{border:2px solid var(--accent-bright);background:linear-gradient(180deg,var(--surface) 0%,var(--surface-2) 100%);box-shadow:var(--shadow-lg)}
+  .pkg .flag{align-self:flex-start;background:var(--accent-bright);color:var(--accent-ink);font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+  .pkg h3{font-size:1.72rem}
+  .pkg .price{font-family:"Barlow Condensed",sans-serif;font-size:2.15rem;font-weight:700;margin:8px 0 2px;color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){ .pkg .price{color:var(--accent)} }
+  .pkg .price small{font-size:1rem;color:var(--ink-3);font-weight:500;text-transform:none;letter-spacing:0;font-family:"Barlow",sans-serif}
+  .pkg .price-note{color:var(--ink-3);font-size:.9rem;margin:0 0 14px}
+  .pkg ul{list-style:none;margin:0 0 20px;padding:0;flex:1}
+  .pkg ul li{padding:7px 0 7px 26px;position:relative;color:var(--ink-2);border-top:1px solid var(--line);font-size:.99rem}
+  .pkg ul li:first-child{border-top:0}
+  .pkg ul li::before{content:"";position:absolute;left:2px;top:14px;width:12px;height:7px;border-left:3px solid var(--accent-bright);border-bottom:3px solid var(--accent-bright);transform:rotate(-45deg)}
+  .pkg .btn{width:100%}
+  .boat-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px;box-shadow:var(--shadow);margin-top:18px;display:flex;flex-wrap:wrap;gap:20px 28px;align-items:center;justify-content:space-between}
+  .boat-card h3{font-size:1.72rem}
+  .boat-card .boat-text{flex:1;min-width:min(100%,420px)}
+  .boat-card p{color:var(--ink-2);margin:8px 0 0}
+  .boat-card .boat-actions{display:flex;flex-wrap:wrap;gap:10px;flex:none}
+  @media (max-width:640px){ .boat-card .boat-actions{width:100%} .boat-card .boat-actions .btn{flex:1} }
+
+  /* ---------- split feature rows ---------- */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  @media (max-width:860px){ .split{grid-template-columns:1fr;gap:26px} }
+  .split figure{margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .split figure img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .split h2{font-size:clamp(1.9rem,4vw,2.7rem)}
+  .split p{color:var(--ink-2)}
+  .dark-band{background:var(--dark-band);color:var(--dark-ink)}
+  .dark-band p{color:var(--dark-ink-2)}
+  .dark-band .tag{color:var(--on-dark)}
+  .tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}
+  @media (max-width:640px){ .tier-grid{grid-template-columns:1fr} }
+  .tier{background:var(--dark-band-2);border:1px solid #2a6aa8;border-radius:12px;padding:18px}
+  .tier b{font-family:"Barlow Condensed",sans-serif;font-size:1.5rem;text-transform:uppercase;display:block;color:#fff}
+  .tier span{color:var(--dark-ink-2);font-size:.95rem}
+  .tier .warranty{color:var(--on-dark);font-weight:600}
+
+  .addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:860px){ .addon-grid{grid-template-columns:1fr} }
+  .addon{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .addon h3{font-size:1.4rem;margin-bottom:8px}
+  .addon p{color:var(--ink-2);margin:0 0 14px}
+  .addon .price{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.35rem}
+  .addon-logo{margin:-24px -24px 18px;border-radius:14px 14px 0 0;overflow:hidden;background:#000}
+  .addon-logo img{width:100%;height:320px;object-fit:contain;background:#000}
+
+  /* ---------- logo band ---------- */
+  .logo-band{padding:0 0 72px}
+  .logo-band-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:640px){ .logo-band-grid{grid-template-columns:1fr} }
+  .logo-card{margin:0;background:#ffffff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;display:flex;align-items:center;justify-content:center}
+  .logo-card img{width:100%;height:300px;object-fit:contain}
+  @media (max-width:640px){ .logo-card img{height:240px} }
+
+  /* ---------- before & after photos ---------- */
+  .ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .ba{position:relative}
+  .ba-tag{position:absolute;top:10px;left:10px;background:rgba(4,32,64,.9);color:#fff;font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;padding:4px 10px;border-radius:6px;z-index:2}
+  .ba-tag.after{background:var(--accent-bright)}
+  .split .ba img{aspect-ratio:3/4}
+  .addon-grid{grid-template-columns:repeat(6,1fr)}
+  .addon{grid-column:span 2}
+  .addon.wide{grid-column:1/-1}
+  .addon.half{grid-column:span 3}
+  @media (max-width:860px){ .addon-grid{grid-template-columns:1fr} .addon,.addon.half,.addon.wide{grid-column:auto} }
+  .addon-media{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 16px}
+  @media (max-width:760px){ .addon-media{grid-template-columns:1fr 1fr} }
+  .addon-media figure,.addon .ba-pair figure{margin:0;border-radius:10px;overflow:hidden}
+  .addon-media img,.addon .ba-pair img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+  .addon .ba-pair{margin-bottom:16px}
+
+  /* ---------- work gallery ---------- */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:760px){ .work-grid{grid-template-columns:1fr} }
+  .work-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:box-shadow .18s ease}
+  .work-card:hover{box-shadow:var(--shadow-lg)}
+  .work-card.wide{grid-column:1/-1}
+  .work-media{display:grid;grid-template-columns:1fr 1fr}
+  .work-media.cols-3{grid-template-columns:repeat(3,1fr)}
+  .work-media.cols-4{grid-template-columns:repeat(4,1fr)}
+  .work-media.cols-1{grid-template-columns:1fr}
+  @media (max-width:560px){ .work-media.cols-4{grid-template-columns:1fr 1fr} .work-media.cols-3{grid-template-columns:1fr 1fr} .work-media.cols-3 figure:last-child{grid-column:1/-1} .work-media.cols-3 figure:last-child img{aspect-ratio:4/3} }
+  .work-media figure{margin:0;position:relative}
+  .work-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+  .work-media.cols-1 img{aspect-ratio:4/3}
+  .work-media video{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;display:block;background:#061a30}
+  .work-card.wide .work-media img{aspect-ratio:16/10}
+  .work-card.wide .work-media.cols-4 img{aspect-ratio:3/4}
+  .work-body{padding:18px 20px 20px}
+  .work-body h3{font-size:1.35rem}
+  .work-body p{color:var(--ink-2);margin:6px 0 0;font-size:.97rem}
+
+  /* ---------- reviews ---------- */
+  .rating-banner{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;background:var(--dark-band);color:#fff;border-radius:var(--radius-lg);padding:20px 24px;margin-bottom:20px;box-shadow:var(--shadow-lg)}
+  .rating-banner .score{font-family:"Barlow Condensed",sans-serif;font-size:3rem;font-weight:700;line-height:1;color:#fff}
+  .rating-banner .stars-big{color:#f2a900;font-size:1.5rem;letter-spacing:.14em;line-height:1}
+  .rating-banner .rb-text{flex:1;min-width:200px}
+  .rating-banner .rb-text strong{display:block;font-size:1.08rem;color:#fff}
+  .rating-banner .rb-text span{color:var(--dark-ink-2);font-size:.96rem}
+  .rating-banner .btn{flex:none}
+  .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:860px){ .reviews-grid{grid-template-columns:1fr} }
+  .review-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column;margin:0;transition:box-shadow .18s ease, transform .18s ease}
+  .review-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+  .review-stars{color:#f2a900;font-size:1.35rem;letter-spacing:.18em;line-height:1;margin-bottom:16px}
+  .review-card blockquote{margin:0;flex:1}
+  .review-card blockquote p{margin:0;color:var(--ink);font-size:1.05rem;line-height:1.6}
+  .review-meta{margin-top:20px;padding-top:16px;border-top:1px solid var(--line)}
+  .review-meta strong{display:block;font-size:1.02rem;color:var(--ink)}
+  .review-meta span{color:var(--ink-3);font-size:.93rem}
+  .review-source{display:inline-block;margin-top:6px;font-size:.88rem;font-weight:600;color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){ .review-source{color:var(--accent)} }
+  .fb-link{display:inline-flex;align-items:center;gap:8px;font-weight:600}
+  .fb-link svg{width:18px;height:18px;flex:none;fill:currentColor}
+
+  /* ---------- merch ---------- */
+  .merch-note{background:var(--warn-bg);color:var(--warn-ink);border-radius:12px;padding:14px 18px;font-weight:600;font-size:1.02rem;margin-bottom:26px}
+  .merch-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:980px){ .merch-grid{grid-template-columns:1fr 1fr} }
+  @media (max-width:640px){ .merch-grid{grid-template-columns:1fr} }
+  .merch-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:box-shadow .18s ease}
+  .merch-card:hover{box-shadow:var(--shadow-lg)}
+  .merch-media{background:var(--surface-2)}
+  .merch-media img{width:100%;aspect-ratio:4/3;object-fit:contain}
+  .merch-thumbs{display:flex;gap:8px;padding:10px 14px 0}
+  .merch-thumb{border:2px solid var(--line);background:var(--surface-2);border-radius:8px;padding:0;cursor:pointer;width:54px;height:54px;overflow:hidden;flex:none}
+  .merch-thumb img{width:100%;height:100%;object-fit:cover}
+  .merch-thumb[aria-pressed="true"]{border-color:var(--accent-bright)}
+  .merch-body{padding:20px 22px 22px;display:flex;flex-direction:column;flex:1}
+  .merch-body h3{font-size:1.5rem}
+  .merch-desc{color:var(--ink-2);margin:6px 0 0;font-size:.97rem}
+  .merch-price-row{display:flex;align-items:baseline;gap:10px;margin:14px 0 4px}
+  .merch-price{font-family:"Barlow Condensed",sans-serif;font-size:2rem;font-weight:700;color:var(--accent-strong);line-height:1}
+  @media (prefers-color-scheme: dark){ .merch-price{color:var(--accent)} }
+  .merch-price-note{color:var(--ink-3);font-size:.9rem}
+  .merch-opt{margin-top:14px}
+  .merch-opt .field-label{margin-bottom:8px}
+  .merch-onesize{color:var(--ink-2);font-weight:600;margin:14px 0 0}
+  .merch-body .btn{width:100%;margin-top:auto}
+  .merch-actions{margin-top:18px}
+  .merch-pay-note{color:var(--ink-2);margin:22px 0 0;font-size:.98rem}
+
+  /* ---------- booking ---------- */
+  .book-shell{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;align-items:start}
+  @media (max-width:940px){ .book-shell{grid-template-columns:1fr} }
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow)}
+  .panel.summary{box-shadow:var(--shadow-lg);border-color:var(--accent-bright);border-width:1.5px}
+  .panel h3{font-size:1.5rem;margin-bottom:4px}
+  .panel .sub{color:var(--ink-2);margin:0 0 20px;font-size:.98rem}
+  fieldset{border:0;margin:0 0 22px;padding:0}
+  legend,.field-label{font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:1rem;margin-bottom:10px;display:block;color:var(--ink)}
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:2px solid var(--line);background:var(--surface-2);color:var(--ink);border-radius:999px;padding:9px 16px;font:inherit;font-weight:600;font-size:.96rem;cursor:pointer}
+  .chip:hover{border-color:var(--ink-3)}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .chip .chip-note{display:block;font-size:.78rem;font-weight:500;opacity:.75}
+  .pkg-pick{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  @media (max-width:560px){ .pkg-pick{grid-template-columns:1fr} }
+  .pkg-pick .chip{border-radius:12px;text-align:left;padding:12px 14px}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:560px){ .form-grid{grid-template-columns:1fr} }
+  .form-grid .full{grid-column:1/-1}
+  label.f{display:block}
+  label.f span{font-weight:600;font-size:.94rem;display:block;margin-bottom:6px}
+  input[type="text"],input[type="tel"],input[type="date"],textarea{
+    width:100%;font:inherit;color:var(--ink);background:var(--surface-2);
+    border:2px solid var(--line);border-radius:10px;padding:11px 13px}
+  textarea{resize:vertical;min-height:74px}
+  input:focus,textarea:focus{border-color:var(--accent-bright);outline:none}
+  .hint{font-size:.88rem;color:var(--ink-3);margin-top:6px}
+  .warn{display:none;background:var(--warn-bg);color:var(--warn-ink);border-radius:10px;padding:10px 14px;font-size:.95rem;font-weight:600;margin-top:10px}
+  .warn.show{display:block}
+  .summary{position:sticky;top:86px}
+  @media (max-width:940px){ .summary{position:static} }
+  .summary dl{margin:0 0 6px}
+  .summary .row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-top:1px solid var(--line);font-size:.99rem}
+  .summary .row:first-child{border-top:0}
+  .summary dt{color:var(--ink-2)}
+  .summary dd{margin:0;font-weight:600;text-align:right}
+  .summary .total{border-top:2px solid var(--ink);margin-top:6px;padding-top:14px}
+  .summary .total .row{border-top:0;padding:3px 0}
+  .summary .big{font-family:"Barlow Condensed",sans-serif;font-size:1.7rem;font-weight:700}
+  .pay-opts{display:grid;gap:8px;margin:6px 0 4px}
+  .pay-opt{display:flex;gap:12px;align-items:flex-start;border:2px solid var(--line);background:var(--surface-2);border-radius:12px;padding:13px 14px;cursor:pointer;text-align:left;font:inherit;width:100%;color:var(--ink)}
+  .pay-opt[aria-pressed="true"]{border-color:var(--accent-bright);background:var(--surface)}
+  .pay-opt .dot{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--ink-3);margin-top:3px;position:relative}
+  .pay-opt[aria-pressed="true"] .dot{border-color:var(--accent-bright)}
+  .pay-opt[aria-pressed="true"] .dot::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--accent-bright)}
+  .pay-opt b{display:block;font-size:1rem}
+  .pay-opt span{color:var(--ink-2);font-size:.9rem}
+  .summary .actions{display:grid;gap:10px;margin-top:18px}
+  .summary .fineprint{color:var(--ink-3);font-size:.87rem;margin-top:14px}
+  .copied-msg{display:none;color:var(--ok);font-weight:600;font-size:.94rem;text-align:center}
+  .copied-msg.show{display:block}
+  .pay-detail{margin-top:12px;border:2px solid var(--accent-bright);background:var(--warn-bg);border-radius:12px;padding:14px 16px}
+  .pay-detail[hidden]{display:none}
+  .pay-detail b{display:block;font-size:1rem;margin-bottom:2px}
+  .pay-detail .handle{font-weight:700;font-size:1.08rem;word-break:break-all}
+  .pay-detail p{margin:6px 0 10px;color:var(--ink-2);font-size:.93rem}
+  .pay-detail .pay-actions{display:flex;flex-wrap:wrap;gap:8px}
+  .pay-detail .pay-actions a,.pay-detail .pay-actions button{font:inherit;font-weight:600;font-size:.94rem;border-radius:8px;padding:8px 14px;cursor:pointer;text-decoration:none}
+  .pay-detail .pay-open{background:var(--ink);color:var(--bg);border:2px solid var(--ink)}
+  .pay-detail .pay-copy{background:transparent;color:var(--ink);border:2px solid var(--line)}
+  .pay-copied{color:var(--ok);font-weight:600;font-size:.9rem}
+  .pay-qr{margin:14px 0 4px;text-align:center}
+  .pay-qr img{width:220px;max-width:100%;height:auto;margin:0 auto;border-radius:12px;background:#fff}
+  .pay-qr figcaption{font-size:.9rem;color:var(--ink-2);margin-top:8px;font-weight:600}
+  .faq-qr{margin:16px 0 4px;text-align:left}
+  .faq-qr img{width:240px;max-width:100%;height:auto;border-radius:12px;background:#fff;border:1px solid var(--line)}
+  .faq-qr figcaption{font-size:.9rem;color:var(--ink-2);margin-top:8px;font-weight:600}
+
+  /* ---------- faq / footer ---------- */
+  .faq{max-width:820px}
+  details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px 22px;margin-bottom:12px}
+  summary{cursor:pointer;font-weight:600;font-size:1.06rem;padding:14px 0}
+  details p{color:var(--ink-2);margin:0 0 16px}
+  footer{background:var(--dark-band);color:var(--dark-ink-2);padding:52px 0 34px}
+  footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+  @media (max-width:760px){ footer .cols{grid-template-columns:1fr} }
+  footer h3{color:#fff;font-size:1.3rem;margin-bottom:12px}
+  footer a{color:var(--dark-ink);text-decoration:none}
+  footer a:hover{text-decoration:underline}
+  footer ul{list-style:none;margin:0;padding:0}
+  footer li{padding:3px 0}
+  footer .bottom{border-top:1px solid #1d5a94;margin-top:36px;padding-top:20px;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.92rem}
+  @media (max-width:760px){
+    .section{padding:64px 0}
+    .hero .wrap{padding-top:56px;padding-bottom:56px}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .btn,.pkg,.review-card{transition:none}
+    .btn-amber:hover,.pkg:hover,.review-card:hover{transform:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span><strong>Mon–Fri</strong> 8:00 AM – 5:00 PM</span>
+    <span>414 3rd Ave, Warner, OK</span>
+    <span class="spacer"></span>
+    <a href="tel:+19183299259">Call (918) 329-9259</a>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Clean Auto <span>Details</span></a>
+    <nav class="main" aria-label="Site">
+      <a href="#packages">Packages</a>
+      <a href="#ceramic">Ceramic Coating</a>
+      <a href="#more">More Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#merch">Merch</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-amber btn-sm" href="#book">Book Now</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img class="hero-bg" src="asset-001.jpg" alt="Casey crouched behind a white Ford F-150, wiping down the grille in his white Clean Auto Details stained-glass truck tee" />
+    <div class="scrim"></div>
+    <div class="wrap">
+      <div class="hero-text">
+      <div class="domain">cleanautodetails.com · Warner, Oklahoma</div>
+      <h1>Keep Em <span class="dot">Shinning</span></h1>
+      <p class="lede">Full-service auto detailing — from a wash &amp; sealant to full paint correction and ceramic coating with a warranty. Pick your package, pick your day, and we&rsquo;ll take it from there.</p>
+      <a class="hero-rating" href="#reviews" aria-label="Rated 5 out of 5 stars on Google — read our reviews">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span><strong>5.0 on Google</strong> <span class="muted">· All recent reviews are 5 stars</span></span>
+        <span class="chev" aria-hidden="true">→</span>
+      </a>
+      <div class="cta-row">
+        <a class="btn btn-amber" href="#book">Book an Appointment</a>
+        <a class="btn btn-outline-light" href="#packages">See Packages &amp; Prices</a>
+      </div>
+      <div class="hero-facts">
+        <div class="fact"><b>Visit</b>414 3rd Ave, Warner, OK</div>
+        <div class="fact"><b>Hours</b>Mon–Fri · 8 AM – 5 PM</div>
+        <div class="fact"><b>Call or Text</b><a href="tel:+19183299259">(918) 329-9259</a></div>
+        <div class="fact"><b>Prices</b>Range by size &amp; condition — confirmed before we start</div>
+      </div>
+      </div>
+      <figure class="hero-logo"><img src="asset-002.jpg" alt="Clean Auto Details main logo — pinstriped script lettering with a winged eyeball on black" /></figure>
+    </div>
+  </section>
+
+  <!-- STRIP -->
+  <div class="strip" aria-label="Highlights">
+    <div class="wrap">
+      <div class="cell"><b>Details from $50</b><span>Wash &amp; 30-day sealant, priced by condition</span></div>
+      <div class="cell"><b>Paint Correction</b><span>2-step and 3-step buffing, wet sanding available</span></div>
+      <div class="cell"><b>Ceramic up to 7 Years</b><span>2, 5 &amp; 7-year coatings with warranties</span></div>
+      <div class="cell"><b>More Than Detailing</b><span>Custom bodywork &amp; paint, sound damping installs</span></div>
+    </div>
+  </div>
+
+  <!-- PACKAGES -->
+  <section class="section" id="packages">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Detail Packages</span>
+        <h2>Pick your level of clean</h2>
+        <p>Every price is a range — the final quote depends on your vehicle&rsquo;s size and condition, and it&rsquo;s confirmed with you before any work starts. No surprises.</p>
+      </div>
+
+      <div class="pkg-grid">
+        <article class="pkg">
+          <h3>Wash &amp; Sealant</h3>
+          <div class="price">$50–$125</div>
+          <p class="price-note">Priced by condition</p>
+          <ul>
+            <li>Full exterior wash</li>
+            <li>30-day paint sealant</li>
+            <li>Tires shined</li>
+            <li>Wheels &amp; inner fenders cleaned</li>
+          </ul>
+          <button class="btn btn-dark" type="button" data-book="wash">Book This Package</button>
+        </article>
+
+        <article class="pkg">
+          <h3>Quick Detail</h3>
+          <div class="price">$100–$200</div>
+          <p class="price-note">Priced by vehicle size</p>
+          <ul>
+            <li>Full exterior wash</li>
+            <li>Door jambs cleaned</li>
+            <li>Full vacuum</li>
+            <li>Interior wipe-down</li>
+            <li>All glass cleaned</li>
+          </ul>
+          <button class="btn btn-dark" type="button" data-book="quick">Book This Package</button>
+        </article>
+
+        <article class="pkg featured">
+          <span class="flag">Full Inside &amp; Out</span>
+          <h3>Base Detail</h3>
+          <div class="price">$200–$450</div>
+          <p class="price-note">Priced by size &amp; condition</p>
+          <ul>
+            <li>Full exterior wash &amp; 30-day sealant</li>
+            <li>Tire shine, wheels, inner fenders &amp; door jambs</li>
+            <li>Exterior plastic shined &amp; restored</li>
+            <li>Full interior cleaning: headliner, carpet, dash, doors, seats &amp; vents</li>
+            <li>All glass done to a crystal-clear view</li>
+            <li>Plastic &amp; leather treated with a non-greasy product</li>
+          </ul>
+          <button class="btn btn-amber" type="button" data-book="base">Book This Package</button>
+        </article>
+
+        <article class="pkg">
+          <h3>Full Detail</h3>
+          <div class="price">$600–$800</div>
+          <p class="price-note">Priced by size &amp; condition</p>
+          <ul>
+            <li>Everything in the Base Detail</li>
+            <li>2-step paint correction / buffing</li>
+            <li>Topped with a 1-year paint sealant</li>
+          </ul>
+          <button class="btn btn-dark" type="button" data-book="full">Book This Package</button>
+        </article>
+
+        <article class="pkg">
+          <h3>Full Buffing Service</h3>
+          <div class="price">$800–$1,500</div>
+          <p class="price-note">Priced by size &amp; condition</p>
+          <ul>
+            <li>Wet sanding where the paint needs it</li>
+            <li>3-step paint correction / buffing</li>
+            <li>Topped with a 2-year ceramic coating</li>
+          </ul>
+          <button class="btn btn-dark" type="button" data-book="buffing">Book This Package</button>
+        </article>
+
+        <article class="pkg">
+          <h3>Headlight Restoration</h3>
+          <div class="price">$50 <small>per lens</small></div>
+          <p class="price-note">Starting price</p>
+          <ul>
+            <li>Cloudy, yellowed lenses restored</li>
+            <li>Clearer light output &amp; a cleaner front end</li>
+            <li>Add it to any detail, or book it on its own</li>
+          </ul>
+          <button class="btn btn-dark" type="button" data-book="headlight">Book This Service</button>
+        </article>
+      </div>
+
+      <article class="boat-card">
+        <div class="boat-text">
+          <h3>Boat Detailing &amp; Buffing</h3>
+          <p>Clean Auto Details also details and buffs boats. Boat work is quoted individually based on size and condition — call or text for a quote.</p>
+        </div>
+        <div class="boat-actions">
+          <a class="btn btn-amber" href="tel:+19183299259">Call for a Quote</a>
+          <a class="btn btn-ghost" href="sms:+19183299259">Text (918) 329-9259</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PAINT CORRECTION -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap split">
+      <figure><img src="asset-003.jpg" alt="Mirror-like gloss on a black Mustang GT panel after buffing, reflecting the sky, trees, and lot — Clean Auto Details, Sep 23, 2026" loading="lazy" /></figure>
+      <div>
+        <span class="tag">Paint Correction</span>
+        <h2>Swirls, scratches &amp; dull paint — corrected, not covered up</h2>
+        <p>Our Full Detail adds a 2-step paint correction and buffing on top of the Base Detail, finished with a 1-year paint sealant. For paint that needs more, the Full Buffing Service goes further: wet sanding plus a 3-step correction, topped with a 2-year ceramic coating.</p>
+        <p>Not sure which level your paint needs? Book a Base or Full Detail and we&rsquo;ll look the paint over with you at drop-off and confirm the right service and the exact price before we start.</p>
+        <a class="btn btn-dark" href="#book">Book Paint Correction</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERIOR -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap split">
+      <div>
+        <span class="tag">Interior Detailing</span>
+        <h2>An interior that feels new again</h2>
+        <p>The Base Detail is a true full interior cleaning — headliner, carpet, dash, doors, seats, and the ventilation system — with every piece of glass finished crystal clear. All plastic and leather is treated with a non-greasy product, so it looks rich without feeling slick.</p>
+        <p>Just need a refresh? The Quick Detail covers a full exterior wash, vacuum, interior wipe-down, door jambs, and all glass.</p>
+        <p><strong>Real job, pictured:</strong> this blue Kia Sorento came in with an orange-brown spill across the rear carpet — before and after, Oct 16, 2026.</p>
+        <a class="btn btn-dark" href="#book">Book an Interior Detail</a>
+      </div>
+      <div class="ba-pair" role="group" aria-label="Kia Sorento interior before and after photos">
+        <figure class="ba"><img src="asset-004.jpg" alt="Before: rear seats and carpet of a blue Kia Sorento covered in an orange-brown spill, Oct 16, 2026" loading="lazy" /><span class="ba-tag">Before</span></figure>
+        <figure class="ba"><img src="asset-005.jpg" alt="After: the same Kia Sorento rear carpet cleaned, spill gone, Oct 16, 2026" loading="lazy" /><span class="ba-tag after">After</span></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS -->
+  <section class="logo-band" aria-label="Clean Auto Details logos">
+    <div class="wrap logo-band-grid">
+      <figure class="logo-card"><img src="asset-006.jpg" alt="Colorful Clean Auto Details logo with bright pink, blue, and yellow lettering" loading="lazy" /></figure>
+      <figure class="logo-card"><img src="asset-007.jpg" alt="Black and white Clean Auto Details logo with a polishing machine" loading="lazy" /></figure>
+    </div>
+  </section>
+
+  <!-- CERAMIC -->
+  <section class="section dark-band" id="ceramic">
+    <div class="wrap split">
+      <figure><img src="asset-008.jpg" alt="Black Audi A5 after buffing and a 7-year ceramic coating, clouds reflected in its glossy hood — Clean Auto Details, Sep 2, 2026" loading="lazy" /></figure>
+      <div>
+        <span class="tag">Ceramic Coating</span>
+        <h2>Years of protection, backed by a warranty</h2>
+        <p>Ceramic coating packages run <strong style="color:#fff">$800–$2,500</strong> depending on your vehicle&rsquo;s size, its condition, and the coating you choose. Every tier includes a written warranty period:</p>
+        <div class="tier-grid">
+          <div class="tier"><b>2-Year</b><span>Coating</span><br /><span class="warranty">1-year warranty</span></div>
+          <div class="tier"><b>5-Year</b><span>Coating</span><br /><span class="warranty">3-year warranty</span></div>
+          <div class="tier"><b>7-Year</b><span>Coating</span><br /><span class="warranty">5-year warranty</span></div>
+        </div>
+        <p style="margin-top:22px">Tell us which tier you&rsquo;re interested in when you book, and we&rsquo;ll confirm the exact price for your vehicle at drop-off.</p>
+        <button class="btn btn-amber" type="button" data-book="ceramic">Book a Ceramic Coating</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MORE SERVICES -->
+  <section class="section" id="more">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">More Services</span>
+        <h2>Beyond detailing</h2>
+        <p>Some jobs don&rsquo;t fit a package. These are quoted individually — call or send a booking request and tell us what you have in mind.</p>
+      </div>
+      <div class="addon-grid">
+        <article class="addon wide">
+          <figure class="addon-logo"><img src="asset-009.jpg" alt="Clean Auto Details logo with a devil driving a classic car — Resurrect Your Ride" loading="lazy" /></figure>
+          <h3>Custom Bodywork &amp; Paint</h3>
+          <p>Custom bodywork and paint jobs, done in-house. Bring us the project and we&rsquo;ll talk through the work and the price before anything starts.</p>
+          <p>Pictured: a white Ram 1500 two-tone &ldquo;tuxedo&rdquo; job — the roof sanded and the cab masked off in the booth during prep, then finished with a glossy black roof over the white body.</p>
+          <div class="addon-media" role="group" aria-label="Ram 1500 tuxedo paint job prep and finished photos">
+            <figure class="ba"><img src="asset-010.jpg" alt="Prep: the white Ram 1500 roof sanded down before paint, Oct 2026" loading="lazy" /><span class="ba-tag">Prep</span></figure>
+            <figure class="ba"><img src="asset-011.jpg" alt="Prep: the Ram 1500 masked off with plastic and tape in the paint booth, Oct 2026" loading="lazy" /><span class="ba-tag">Prep</span></figure>
+            <figure class="ba"><img src="asset-012.jpg" alt="Prep: front of the Ram 1500 masked in the paint booth, mirror taped, Oct 2026" loading="lazy" /><span class="ba-tag">Prep</span></figure>
+            <figure class="ba"><img src="asset-013.jpg" alt="Finished: white Ram 1500 with a glossy black roof, parked outside the shop, Oct 11, 2026" loading="lazy" /><span class="ba-tag after">Finished</span></figure>
+          </div>
+          <span class="price">Call for a quote</span>
+        </article>
+        <article class="addon half">
+          <h3>Sound Damping Installs</h3>
+          <p>Sound damping installation to quiet road noise and tighten up your audio. Priced by vehicle and coverage area.</p>
+          <span class="price">Call for a quote</span>
+        </article>
+        <article class="addon half">
+          <h3>Headlight Restoration</h3>
+          <p>Foggy, oxidized headlights polished back to clear — better looks and better light on the road at night. Pictured: a gray Ford F-150, lens taped off and hazy, then restored clear (Oct 20, 2026).</p>
+          <div class="ba-pair" role="group" aria-label="Ford F-150 headlight restoration before and after photos">
+            <figure class="ba"><img src="asset-014.jpg" alt="Before: gray Ford F-150 headlight taped off, hazy and dulled, Oct 20, 2026" loading="lazy" /><span class="ba-tag">Before</span></figure>
+            <figure class="ba"><img src="asset-015.jpg" alt="After: the same Ford F-150 headlight polished clear, tape removed, Oct 20, 2026" loading="lazy" /><span class="ba-tag after">After</span></figure>
+          </div>
+          <span class="price">From $50 per lens</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BEFORE & AFTER GALLERY -->
+  <section class="section" id="work" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Before &amp; After</span>
+        <h2>Our work, from our shop</h2>
+        <p>Real jobs done at Clean Auto Details in Warner — before, during, and after.</p>
+      </div>
+      <div class="work-grid">
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <video src="asset-016.mp4" poster="asset-001.jpg" muted loop playsinline controls preload="metadata" aria-label="Video of Casey washing and detailing the grille of a white Ford F-150"></video>
+          </div>
+          <div class="work-body">
+            <h3>Casey at Work</h3>
+            <p>Casey at work — washing a Ford F-150. A 12-second look at a hand wash at the shop.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <video src="asset-017.mp4" poster="asset-018.jpg" loop playsinline controls preload="metadata" aria-label="Video of a black Pontiac Trans Am rolling out of the shop garage after a fresh paint job, with music"></video>
+          </div>
+          <div class="work-body">
+            <h3>Trans Am Reveal</h3>
+            <p>Trans Am reveal — fresh paint job, fresh out of the shop. A black Pontiac Trans Am rolling out of the garage after a fresh paint job — tap play to hear the music.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-3">
+            <figure class="ba"><img src="asset-019.jpg" alt="Before: Kia Sorento rear carpet with a large orange-brown spill pooled on it, Oct 16, 2026" loading="lazy" /><span class="ba-tag">Before</span></figure>
+            <figure class="ba"><img src="asset-020.jpg" alt="After: the same Kia Sorento rear carpet cleaned, spill removed, Oct 16, 2026" loading="lazy" /><span class="ba-tag after">After</span></figure>
+            <figure class="ba"><img src="asset-021.jpg" alt="After: clean front seats and floor mats in the blue Kia Sorento, Oct 16, 2026" loading="lazy" /><span class="ba-tag after">After</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Kia Sorento — Interior Spill Cleanup</h3>
+            <p>Blue Sorento, Oct 16, 2026. A second angle on the spill job from the Interior section — carpet cleaned out, front seats and mats finished.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media">
+            <figure class="ba"><img src="asset-022.jpg" alt="Before: close-up of a hazy Ford F-150 headlight taped off for restoration, Oct 20, 2026" loading="lazy" /><span class="ba-tag">Before</span></figure>
+            <figure class="ba"><img src="asset-023.jpg" alt="After: the same Ford F-150 headlight restored clear and glossy, Oct 20, 2026" loading="lazy" /><span class="ba-tag after">After</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Ford F-150 — Headlight Restoration</h3>
+            <p>Gray F-150, Oct 20, 2026. The other lens from the job in More Services — taped off and hazy, then polished back to clear.</p>
+          </div>
+        </article>
+
+        <article class="work-card wide">
+          <div class="work-media cols-4">
+            <figure class="ba"><img src="asset-010.jpg" alt="Prep: white Ram 1500 roof sanded before paint, Oct 2026" loading="lazy" /><span class="ba-tag">Prep</span></figure>
+            <figure class="ba"><img src="asset-024.jpg" alt="Prep: rear pillar of the Ram 1500 masked with tape and plastic in the paint booth, Oct 2026" loading="lazy" /><span class="ba-tag">Prep</span></figure>
+            <figure class="ba"><img src="asset-011.jpg" alt="Prep: side of the Ram 1500 masked off in the paint booth, Oct 2026" loading="lazy" /><span class="ba-tag">Prep</span></figure>
+            <figure class="ba"><img src="asset-013.jpg" alt="Finished: white Ram 1500 with glossy black roof parked outside the shop, Oct 11, 2026" loading="lazy" /><span class="ba-tag after">Finished</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Ram 1500 — Two-Tone &ldquo;Tuxedo&rdquo; Paint Job</h3>
+            <p>White Ram 1500. Prep Oct 5–9, 2026: roof sanded, cab masked in the booth. Finished Oct 11, 2026 with a glossy black roof.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-025.jpg" alt="Yellow Jeep Wrangler in the shop: the fender on the left of the photo restored black, the fender on the right still faded gray, Sep 17, 2026" loading="lazy" /><span class="ba-tag">Before &amp; After in One Photo</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Jeep Wrangler — Faded Plastic Restoration</h3>
+            <p>Yellow Wrangler, Sep 17, 2026. Caught mid-job in a single photo: left fender restored black, right fender still faded gray.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-003.jpg" alt="Black Mustang GT paint after buffing, reflecting the sky and trees like a mirror, Sep 23, 2026" loading="lazy" /><span class="ba-tag after">After Buffing</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Mustang GT — Buffing</h3>
+            <p>Black Mustang GT, Sep 23, 2026. That&rsquo;s the sky, trees, and lot reflected in the panel after buffing.</p>
+          </div>
+        </article>
+
+        <article class="work-card wide">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-008.jpg" alt="Black Audi A5 front view after buffing and 7-year ceramic coating, clouds reflected in the hood, Sep 2, 2026" loading="lazy" /><span class="ba-tag after">After Buff + Ceramic</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Audi A5 — Buff + 7-Year Ceramic Coating</h3>
+            <p>Black Audi A5, Sep 2, 2026. Buffed, then coated — clouds reflecting off the finished hood.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Google Reviews</span>
+        <h2>What customers say</h2>
+        <p>Recent reviews from Google — all 5 stars.</p>
+      </div>
+      <div class="rating-banner">
+        <div>
+          <div class="score">5.0</div>
+          <div class="stars-big" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+        </div>
+        <div class="rb-text">
+          <strong>Rated 5 stars on Google</strong>
+          <span>Real reviews from real customers in and around Warner, Oklahoma.</span>
+        </div>
+        <a class="btn btn-amber" href="#book">Book Your Detail</a>
+      </div>
+      <div class="reviews-grid">
+        <figure class="review-card">
+          <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            <p>Casey with Clean Auto Details is by far the best guy you can go to for any service he is offering...</p>
+          </blockquote>
+          <figcaption class="review-meta">
+            <strong>Cody Ross</strong>
+            <span>Nov 7, 2026</span><br />
+            <span class="review-source">Google review</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review-card">
+          <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            <p>The work speaks for itself phenomenal took my father's vehicles to them after my dad passed and they...</p>
+          </blockquote>
+          <figcaption class="review-meta">
+            <strong>Gerald Raymond Smith</strong>
+            <span>Nov 6, 2026</span><br />
+            <span class="review-source">Google review</span>
+          </figcaption>
+        </figure>
+
+        <figure class="review-card">
+          <div class="review-stars" role="img" aria-label="Rated 5 out of 5 stars">★★★★★</div>
+          <blockquote>
+            <p>Really great guy he does real good details at a reasonable price</p>
+          </blockquote>
+          <figcaption class="review-meta">
+            <strong>Noah Crabtree</strong>
+            <span>Nov 6, 2026</span><br />
+            <span class="review-source">Google review</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERCH -->
+  <section class="section" id="merch" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Shop Merch</span>
+        <h2>Rep the shop</h2>
+        <p>Tees, hoodies, and snapbacks with our logos — plus Drop Authority gear. Pick your size and color, then text us your order. We&rsquo;ll confirm it with you and take payment with Cash App, PayPal, Venmo, Square, or cash — same as a booking. Nothing is charged on this page.</p>
+      </div>
+      <p class="merch-note">Limited in-stock — most items are made after you order.</p>
+
+      <div class="merch-grid">
+
+        <article class="merch-card" data-name="Flying Eyeball Tee" data-base="25" data-2xl="27" data-3xl="29">
+          <div class="merch-media"><img src="asset-026.jpg" alt="Black Clean Auto Details tees with the flying eyeball pinstripe logo — big print on the back, small print on the chest" loading="lazy" /></div>
+          <div class="merch-body">
+            <h3>Flying Eyeball Tee</h3>
+            <p class="merch-desc">Our flying eyeball pinstripe logo — big on the back, small on the chest.</p>
+            <div class="merch-price-row"><span class="merch-price">$25</span><span class="merch-price-note">2XL $27 · 3XL $29</span></div>
+            <div class="merch-opt">
+              <span class="field-label">Size</span>
+              <div class="chip-row merch-sizes" role="group" aria-label="Size">
+                <button type="button" class="chip" data-size="S" aria-pressed="false">S</button>
+                <button type="button" class="chip" data-size="M" aria-pressed="true">M</button>
+                <button type="button" class="chip" data-size="L" aria-pressed="false">L</button>
+                <button type="button" class="chip" data-size="XL" aria-pressed="false">XL</button>
+                <button type="button" class="chip" data-size="2XL" aria-pressed="false">2XL</button>
+                <button type="button" class="chip" data-size="3XL" aria-pressed="false">3XL</button>
+              </div>
+            </div>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="Black" aria-pressed="true">Black</button>
+                <button type="button" class="chip" data-color="White" aria-pressed="false">White</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+        <article class="merch-card" data-name="Polisher Logo Tee" data-base="25" data-2xl="27" data-3xl="29">
+          <div class="merch-media"><img class="merch-main" src="asset-027.jpg" alt="Light blue Clean Auto Details tee with the round polisher logo on the back" loading="lazy" /></div>
+          <div class="merch-thumbs" role="group" aria-label="Polisher Logo Tee photos">
+            <button type="button" class="merch-thumb" aria-pressed="true" data-src="asset-027.jpg" data-alt="Light blue Clean Auto Details tee with the round polisher logo on the back"><img src="asset-027.jpg" alt="" loading="lazy" /></button>
+            <button type="button" class="merch-thumb" aria-pressed="false" data-src="asset-028.jpg" data-alt="Navy Clean Auto Details tee with the round polisher logo in white on the back"><img src="asset-028.jpg" alt="" loading="lazy" /></button>
+          </div>
+          <div class="merch-body">
+            <h3>Polisher Logo Tee</h3>
+            <p class="merch-desc">The round Clean Auto Details polisher logo, big on the back.</p>
+            <div class="merch-price-row"><span class="merch-price">$25</span><span class="merch-price-note">2XL $27 · 3XL $29</span></div>
+            <div class="merch-opt">
+              <span class="field-label">Size</span>
+              <div class="chip-row merch-sizes" role="group" aria-label="Size">
+                <button type="button" class="chip" data-size="S" aria-pressed="false">S</button>
+                <button type="button" class="chip" data-size="M" aria-pressed="true">M</button>
+                <button type="button" class="chip" data-size="L" aria-pressed="false">L</button>
+                <button type="button" class="chip" data-size="XL" aria-pressed="false">XL</button>
+                <button type="button" class="chip" data-size="2XL" aria-pressed="false">2XL</button>
+                <button type="button" class="chip" data-size="3XL" aria-pressed="false">3XL</button>
+              </div>
+            </div>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="Light Blue" aria-pressed="true">Light Blue</button>
+                <button type="button" class="chip" data-color="Navy" aria-pressed="false">Navy</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+        <article class="merch-card" data-name="Stained-Glass Truck Tee" data-base="25" data-2xl="27" data-3xl="29">
+          <div class="merch-media"><img src="asset-029.jpg" alt="Back of the stained-glass truck tee: an old truck in front of stained-glass windows, with Clean Auto Details and 918-329-9259" loading="lazy" /></div>
+          <div class="merch-body">
+            <h3>Stained-Glass Truck Tee</h3>
+            <p class="merch-desc">An old truck in stained glass, with our name and number. Sold in white — that&rsquo;s where the design looks best. (Photo shows the design on gray.)</p>
+            <div class="merch-price-row"><span class="merch-price">$25</span><span class="merch-price-note">2XL $27 · 3XL $29</span></div>
+            <div class="merch-opt">
+              <span class="field-label">Size</span>
+              <div class="chip-row merch-sizes" role="group" aria-label="Size">
+                <button type="button" class="chip" data-size="S" aria-pressed="false">S</button>
+                <button type="button" class="chip" data-size="M" aria-pressed="true">M</button>
+                <button type="button" class="chip" data-size="L" aria-pressed="false">L</button>
+                <button type="button" class="chip" data-size="XL" aria-pressed="false">XL</button>
+                <button type="button" class="chip" data-size="2XL" aria-pressed="false">2XL</button>
+                <button type="button" class="chip" data-size="3XL" aria-pressed="false">3XL</button>
+              </div>
+            </div>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="White" aria-pressed="true">White</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+        <article class="merch-card" data-name="Classic Truck Tee" data-base="25" data-2xl="27" data-3xl="29">
+          <div class="merch-media"><img src="asset-030.jpg" alt="Back of the light blue Classic Truck tee: a classic old truck with CLEAN AUTO DETAILS around it, worn in the shop" loading="lazy" /></div>
+          <div class="merch-body">
+            <h3>Classic Truck Tee</h3>
+            <p class="merch-desc">A classic old truck in a bold outline print on the back, with CLEAN AUTO DETAILS around it. Shown in light blue.</p>
+            <div class="merch-price-row"><span class="merch-price">$25</span><span class="merch-price-note">2XL $27 · 3XL $29</span></div>
+            <div class="merch-opt">
+              <span class="field-label">Size</span>
+              <div class="chip-row merch-sizes" role="group" aria-label="Size">
+                <button type="button" class="chip" data-size="S" aria-pressed="false">S</button>
+                <button type="button" class="chip" data-size="M" aria-pressed="true">M</button>
+                <button type="button" class="chip" data-size="L" aria-pressed="false">L</button>
+                <button type="button" class="chip" data-size="XL" aria-pressed="false">XL</button>
+                <button type="button" class="chip" data-size="2XL" aria-pressed="false">2XL</button>
+                <button type="button" class="chip" data-size="3XL" aria-pressed="false">3XL</button>
+              </div>
+            </div>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="Light Blue" aria-pressed="true">Light Blue</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+        <article class="merch-card" data-name="Oklahoma Hoodie" data-base="50">
+          <div class="merch-media"><img class="merch-main" src="asset-031.jpg" alt="Front of the white Oklahoma hoodie: Clean Auto Details and 918-329-9259 on the chest, OKLAHOMA down one sleeve, 918 down the other" loading="lazy" /></div>
+          <div class="merch-thumbs" role="group" aria-label="Oklahoma Hoodie photos">
+            <button type="button" class="merch-thumb" aria-pressed="true" data-src="asset-031.jpg" data-alt="Front of the white Oklahoma hoodie: Clean Auto Details and 918-329-9259 on the chest, OKLAHOMA down one sleeve, 918 down the other"><img src="asset-031.jpg" alt="" loading="lazy" /></button>
+            <button type="button" class="merch-thumb" aria-pressed="false" data-src="asset-032.jpg" data-alt="Back of the white Oklahoma hoodie: a rat-rod monster car with KEEP EM' SHINING under Clean Auto Details"><img src="asset-032.jpg" alt="" loading="lazy" /></button>
+          </div>
+          <div class="merch-body">
+            <h3>Oklahoma Hoodie</h3>
+            <p class="merch-desc">White hoodie with our name and number on the chest, OKLAHOMA down one sleeve and 918 down the other — and the rat-rod monster with &ldquo;KEEP EM&rsquo; SHINING&rdquo; on the back.</p>
+            <div class="merch-price-row"><span class="merch-price">$50</span></div>
+            <div class="merch-opt">
+              <span class="field-label">Size</span>
+              <div class="chip-row merch-sizes" role="group" aria-label="Size">
+                <button type="button" class="chip" data-size="S" aria-pressed="false">S</button>
+                <button type="button" class="chip" data-size="M" aria-pressed="true">M</button>
+                <button type="button" class="chip" data-size="L" aria-pressed="false">L</button>
+                <button type="button" class="chip" data-size="XL" aria-pressed="false">XL</button>
+                <button type="button" class="chip" data-size="2XL" aria-pressed="false">2XL</button>
+                <button type="button" class="chip" data-size="3XL" aria-pressed="false">3XL</button>
+              </div>
+            </div>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="White" aria-pressed="true">White</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+        <article class="merch-card" data-name="Trucker Snapback" data-base="35">
+          <div class="merch-media"><img class="merch-main" src="asset-033.jpg" alt="Two black and gray Clean Auto Details flat-bill snapbacks with a silver patch logo" loading="lazy" /></div>
+          <div class="merch-thumbs" role="group" aria-label="Trucker Snapback photos">
+            <button type="button" class="merch-thumb" aria-pressed="true" data-src="asset-033.jpg" data-alt="Two black and gray Clean Auto Details flat-bill snapbacks with a silver patch logo"><img src="asset-033.jpg" alt="" loading="lazy" /></button>
+            <button type="button" class="merch-thumb" aria-pressed="false" data-src="asset-034.jpg" data-alt="Three Clean Auto Details trucker snapbacks: charcoal with teal mesh, light blue with white mesh, and heather gray with black mesh"><img src="asset-034.jpg" alt="" loading="lazy" /></button>
+            <button type="button" class="merch-thumb" aria-pressed="false" data-src="asset-035.jpg" data-alt="Two charcoal Clean Auto Details flat-bill snapbacks with the round logo stitched in white"><img src="asset-035.jpg" alt="" loading="lazy" /></button>
+          </div>
+          <div class="merch-body">
+            <h3>Trucker Snapback</h3>
+            <p class="merch-desc">Trucker snapback with the Clean Auto Details logo. The Black/Gray colorway wears the silver patch.</p>
+            <div class="merch-price-row"><span class="merch-price">$35</span></div>
+            <p class="merch-onesize">One size — snapback fit</p>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="Charcoal/Teal" aria-pressed="true">Charcoal/Teal</button>
+                <button type="button" class="chip" data-color="Light Blue/White" aria-pressed="false">Light Blue/White</button>
+                <button type="button" class="chip" data-color="Heather Gray/Black" aria-pressed="false">Heather Gray/Black</button>
+                <button type="button" class="chip" data-color="Black/Gray (silver patch)" aria-pressed="false">Black/Gray (silver patch)</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+        <article class="merch-card" data-name="Drop Authority Tee" data-base="25" data-2xl="27" data-3xl="29">
+          <div class="merch-media"><img src="asset-036.jpg" alt="Black Drop Authority tee with the dripping crown logo, shown with the matching black snapback" loading="lazy" /></div>
+          <div class="merch-body">
+            <h3>Drop Authority Tee</h3>
+            <p class="merch-desc">Black tee with the Drop Authority crown logo — big on the front, small hit below.</p>
+            <div class="merch-price-row"><span class="merch-price">$25</span><span class="merch-price-note">2XL $27 · 3XL $29</span></div>
+            <div class="merch-opt">
+              <span class="field-label">Size</span>
+              <div class="chip-row merch-sizes" role="group" aria-label="Size">
+                <button type="button" class="chip" data-size="S" aria-pressed="false">S</button>
+                <button type="button" class="chip" data-size="M" aria-pressed="true">M</button>
+                <button type="button" class="chip" data-size="L" aria-pressed="false">L</button>
+                <button type="button" class="chip" data-size="XL" aria-pressed="false">XL</button>
+                <button type="button" class="chip" data-size="2XL" aria-pressed="false">2XL</button>
+                <button type="button" class="chip" data-size="3XL" aria-pressed="false">3XL</button>
+              </div>
+            </div>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="Black" aria-pressed="true">Black</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+        <article class="merch-card" data-name="Drop Authority Snapback" data-base="35">
+          <div class="merch-media"><img src="asset-036.jpg" alt="Black Drop Authority snapback with the crown logo, shown with the matching black tee" loading="lazy" /></div>
+          <div class="merch-body">
+            <h3>Drop Authority Snapback</h3>
+            <p class="merch-desc">Black flat-bill snapback with the Drop Authority crown logo.</p>
+            <div class="merch-price-row"><span class="merch-price">$35</span></div>
+            <p class="merch-onesize">One size — snapback fit</p>
+            <div class="merch-opt">
+              <span class="field-label">Color</span>
+              <div class="chip-row merch-colors" role="group" aria-label="Color">
+                <button type="button" class="chip" data-color="Black" aria-pressed="true">Black</button>
+              </div>
+            </div>
+            <div class="merch-actions"><a class="btn btn-amber merch-order" href="sms:+19183299259">Text to Order</a></div>
+          </div>
+        </article>
+
+      </div>
+      <p class="merch-pay-note">Ordering by text is free and easy: we&rsquo;ll confirm your item, size, and color, then take payment with Cash App, PayPal, Venmo, Square, or cash. Questions? Call the shop at <a href="tel:+19183299259">(918) 329-9259</a>.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section" id="book" style="background:var(--bg-soft)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Book &amp; Pay</span>
+        <h2>Book your appointment</h2>
+        <p>Build your booking below, then text it to us or call to confirm. We&rsquo;ll lock in your day, confirm the exact price for your vehicle, and arrange payment with the method you pick.</p>
+      </div>
+
+      <div class="book-shell">
+        <div class="panel">
+          <form id="bookForm" novalidate>
+            <fieldset>
+              <legend>1 · Choose a package</legend>
+              <div class="pkg-pick" id="pkgPick" role="group" aria-label="Package"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>2 · Vehicle size</legend>
+              <div class="chip-row" id="sizeRow" role="group" aria-label="Vehicle size">
+                <button type="button" class="chip" data-size="Car" aria-pressed="true">Car</button>
+                <button type="button" class="chip" data-size="Truck / SUV" aria-pressed="false">Truck / SUV</button>
+                <button type="button" class="chip" data-size="Large SUV / 3-Row" aria-pressed="false">Large SUV / 3-Row</button>
+              </div>
+              <p class="hint">Where your vehicle lands in the price range depends on its size and condition.</p>
+            </fieldset>
+
+            <fieldset id="ceramicField" hidden>
+              <legend>Ceramic coating tier</legend>
+              <div class="chip-row" id="tierRow" role="group" aria-label="Ceramic tier">
+                <button type="button" class="chip" data-tier="2-Year (1yr warranty)" aria-pressed="true">2-Year<span class="chip-note">1-year warranty</span></button>
+                <button type="button" class="chip" data-tier="5-Year (3yr warranty)" aria-pressed="false">5-Year<span class="chip-note">3-year warranty</span></button>
+                <button type="button" class="chip" data-tier="7-Year (5yr warranty)" aria-pressed="false">7-Year<span class="chip-note">5-year warranty</span></button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>3 · Add-ons</legend>
+              <div class="chip-row" id="addonRow" role="group" aria-label="Add-ons">
+                <button type="button" class="chip" data-addon="Headlight restoration (from $50/lens)" aria-pressed="false">Headlight Restoration<span class="chip-note">from $50 / lens</span></button>
+                <button type="button" class="chip" data-addon="Sound damping install (quote)" aria-pressed="false">Sound Damping Install<span class="chip-note">quoted</span></button>
+                <button type="button" class="chip" data-addon="Custom bodywork & paint (quote)" aria-pressed="false">Custom Bodywork &amp; Paint<span class="chip-note">quoted</span></button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>4 · Pick a day &amp; time</legend>
+              <div class="form-grid">
+                <label class="f"><span>Date</span>
+                  <input type="date" id="fDate" />
+                </label>
+                <div>
+                  <span class="field-label" style="margin-bottom:6px">Drop-off time</span>
+                  <div class="chip-row" id="timeRow" role="group" aria-label="Drop-off time">
+                    <button type="button" class="chip" data-time="8:00 AM" aria-pressed="false">8:00 AM</button>
+                    <button type="button" class="chip" data-time="10:00 AM" aria-pressed="false">10:00 AM</button>
+                    <button type="button" class="chip" data-time="1:00 PM" aria-pressed="false">1:00 PM</button>
+                    <button type="button" class="chip" data-time="3:00 PM" aria-pressed="false">3:00 PM</button>
+                  </div>
+                </div>
+              </div>
+              <div class="warn" id="weekendWarn">We&rsquo;re open Monday–Friday, 8 AM–5 PM — that date falls on a weekend. Pick a weekday, or call us and we&rsquo;ll see what we can do.</div>
+              <p class="hint">Times are drop-off windows; we&rsquo;ll confirm your exact appointment when we reply.</p>
+            </fieldset>
+
+            <fieldset>
+              <legend>5 · Your details</legend>
+              <div class="form-grid">
+                <label class="f"><span>Your name</span>
+                  <input type="text" id="fName" autocomplete="name" placeholder="First and last name" />
+                </label>
+                <label class="f"><span>Your phone</span>
+                  <input type="tel" id="fPhone" autocomplete="tel" placeholder="So we can text you back" />
+                </label>
+                <label class="f full"><span>Vehicle (year, make, model)</span>
+                  <input type="text" id="fVehicle" placeholder="e.g. 2021 Ford F-150" />
+                </label>
+                <label class="f full"><span>Anything we should know? (optional)</span>
+                  <textarea id="fNotes" placeholder="Pet hair, stains, scratches you&rsquo;re worried about…"></textarea>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>6 · How would you like to pay?</legend>
+              <div class="pay-opts" id="payOpts" role="group" aria-label="Payment method"></div>
+              <div class="pay-detail" id="payDetail" hidden></div>
+              <p class="hint">No payment is taken on this page. When we confirm your booking by phone or text, we&rsquo;ll arrange payment with the method you choose — the balance is due when your vehicle is done.</p>
+            </fieldset>
+          </form>
+        </div>
+
+        <aside class="panel summary" aria-label="Booking summary">
+          <h3>Your Booking</h3>
+          <p class="sub">Updates as you choose.</p>
+          <dl>
+            <div class="row"><dt>Package</dt><dd id="sPkg">Wash &amp; Sealant</dd></div>
+            <div class="row"><dt>Vehicle size</dt><dd id="sSize">Car</dd></div>
+            <div class="row" id="sTierRow" hidden><dt>Ceramic tier</dt><dd id="sTier">2-Year</dd></div>
+            <div class="row"><dt>Add-ons</dt><dd id="sAddons">None</dd></div>
+            <div class="row"><dt>Date</dt><dd id="sDate">Not picked yet</dd></div>
+            <div class="row"><dt>Drop-off</dt><dd id="sTime">Not picked yet</dd></div>
+            <div class="row"><dt>Paying with</dt><dd id="sPay">Square (card)</dd></div>
+          </dl>
+          <div class="total">
+            <div class="row"><dt>Estimated total</dt><dd class="big" id="sPrice">$50–$125</dd></div>
+            <div class="row"><dt>Due today</dt><dd id="sDue">$0 — nothing charged here</dd></div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-amber" id="smsBtn" href="sms:+19183299259">Text This Booking to Us</a>
+            <a class="btn btn-dark" href="tel:+19183299259">Call to Book &amp; Pay</a>
+            <button class="btn btn-ghost" type="button" id="copyBtn">Copy Booking Details</button>
+            <span class="copied-msg" id="copiedMsg" role="status">Copied — paste it anywhere to send it to us.</span>
+          </div>
+          <p class="fineprint">Your final price is confirmed before work starts, based on your vehicle&rsquo;s size and condition. Add-ons marked &ldquo;quoted&rdquo; are priced at drop-off. We accept Square, cash, Cash App, PayPal, and Venmo.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Good to Know</span>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Why is every price a range?</summary>
+          <p>A clean sedan and a work truck that hasn&rsquo;t been washed in a year aren&rsquo;t the same job. Each package is priced by your vehicle&rsquo;s size and condition, and we confirm your exact price with you before any work starts — the range on the package is the range you&rsquo;ll land in.</p>
+        </details>
+        <details>
+          <summary>How do I pay?</summary>
+          <p>We accept <strong>Square</strong> (card), <strong>cash</strong>, <strong>Cash App</strong>, <strong>PayPal</strong>, and <strong>Venmo</strong>. Our Cash App is <a href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener"><strong>$CaseyGatwood</strong></a>, our PayPal is <strong>1ridetohigh@gmail.com</strong>, and you can <a href="https://venmo.com/code?user_id=3823967265621201508&amp;created=1794030034" target="_blank" rel="noopener"><strong>pay us on Venmo</strong></a>. Pick your preferred method when you book — nothing is charged on this page. When we confirm your appointment by phone or text, we&rsquo;ll arrange payment with that method, with the balance due when your vehicle is done.</p>
+          <figure class="faq-qr">
+            <img src="asset-037.jpg" alt="PayPal QR code for Casey Gatwood — scan to pay Clean Auto Details on PayPal" loading="lazy" />
+            <figcaption>Scan to pay on PayPal — Casey Gatwood</figcaption>
+          </figure>
+        </details>
+        <details>
+          <summary>What does the ceramic coating warranty cover?</summary>
+          <p>Our 2-year coating comes with a 1-year warranty, the 5-year coating with a 3-year warranty, and the 7-year coating with a 5-year warranty. We&rsquo;ll go over the warranty details for your tier when you book.</p>
+        </details>
+        <details>
+          <summary>Do you do work besides detailing?</summary>
+          <p>Yes — custom bodywork and paint jobs, sound damping installs, headlight restoration, and more. Those are quoted individually, so call <a href="tel:+19183299259">(918) 329-9259</a> or add them to your booking request and tell us what you need.</p>
+        </details>
+        <details>
+          <summary>Where are you, and when are you open?</summary>
+          <p>414 3rd Ave in Warner, Oklahoma. We&rsquo;re open Monday through Friday, 8 AM to 5 PM.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="section dark-band" style="padding:56px 0">
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between">
+      <div>
+        <h2 style="font-size:clamp(1.9rem,4vw,2.6rem);color:#fff">Ready when you are.</h2>
+        <p style="margin:8px 0 0">Book online in about a minute, or just call the shop.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a class="btn btn-amber" href="#book">Book an Appointment</a>
+        <a class="btn btn-outline-light" href="tel:+19183299259">Call (918) 329-9259</a>
+        <a class="btn btn-outline-light" href="https://www.facebook.com/CleanAutoDetails" target="_blank" rel="noopener">Find us on Facebook</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h3>Clean Auto Details</h3>
+        <p style="margin:0 0 10px">Keep em shinning.<br />Auto detailing, paint correction &amp; ceramic coating in Warner, Oklahoma.</p>
+        <p style="margin:0">cleanautodetails.com</p>
+        <p style="margin:14px 0 0"><a class="fb-link" href="https://www.facebook.com/CleanAutoDetails" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.5 1.6-1.5h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.3v3h2.4v7h2.8z"/></svg>Clean Auto Details on Facebook</a></p>
+      </div>
+      <div>
+        <h3>Visit the Shop</h3>
+        <ul>
+          <li>414 3rd Ave</li>
+          <li>Warner, OK</li>
+          <li>Mon–Fri · 8:00 AM – 5:00 PM</li>
+          <li><a href="tel:+19183299259">(918) 329-9259</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>We Accept</h3>
+        <ul>
+          <li>Square (card)</li>
+          <li>Cash</li>
+          <li>Cash App — <a href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener">$CaseyGatwood</a></li>
+          <li>PayPal — 1ridetohigh@gmail.com</li>
+          <li>Venmo — <a href="https://venmo.com/code?user_id=3823967265621201508&amp;created=1794030034" target="_blank" rel="noopener">Pay on Venmo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Clean Auto Details · Warner, Oklahoma</span>
+      <span>Prices are ranges by vehicle size &amp; condition, confirmed before work starts.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var PACKAGES = {
+    wash:      {name:"Wash & Sealant",        price:"$50–$125",     note:"Wash & 30-day sealant"},
+    quick:     {name:"Quick Detail",          price:"$100–$200",    note:"Quick Detail"},
+    base:      {name:"Base Detail",           price:"$200–$450",    note:"Base Detail"},
+    full:      {name:"Full Detail",           price:"$600–$800",    note:"Full Detail (incl. 2-step correction)"},
+    buffing:   {name:"Full Buffing Service",  price:"$800–$1,500",  note:"Full Buffing Service"},
+    ceramic:   {name:"Ceramic Coating",       price:"$800–$2,500",  note:"Ceramic Coating", ceramic:true},
+    headlight: {name:"Headlight Restoration", price:"From $50/lens",note:"Headlight Restoration"},
+    custom:    {name:"Custom Work (Quote)",   price:"Quoted",       note:"Custom bodywork / paint / sound damping"}
+  };
+  var PAYMENTS = [
+    {id:"square",  label:"Square — Card",       desc:"Pay by card through Square when your booking is confirmed."},
+    {id:"cash",    label:"Cash",                desc:"Pay cash at the shop when you drop off or pick up."},
+    {id:"cashapp", label:"Cash App",            desc:"Send to $CaseyGatwood on Cash App."},
+    {id:"paypal",  label:"PayPal",              desc:"Send to 1ridetohigh@gmail.com on PayPal."},
+    {id:"venmo",   label:"Venmo",               desc:"Pay through our Venmo link — tap Open Venmo below."}
+  ];
+  var state = { pkg:"wash", size:"Car", tier:"2-Year (1yr warranty)", addons:[], date:"", time:"", pay:"square" };
+
+  var $ = function(id){ return document.getElementById(id); };
+
+  /* package picker */
+  var pkgPick = $("pkgPick");
+  Object.keys(PACKAGES).forEach(function(key){
+    var p = PACKAGES[key];
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.dataset.pkg = key;
+    b.setAttribute("aria-pressed", key === state.pkg ? "true" : "false");
+    b.innerHTML = p.name + '<span class="chip-note">' + p.price + "</span>";
+    b.addEventListener("click", function(){ setPkg(key); });
+    pkgPick.appendChild(b);
+  });
+
+  /* payment options */
+  var payOpts = $("payOpts");
+  PAYMENTS.forEach(function(p){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "pay-opt"; b.dataset.pay = p.id;
+    b.setAttribute("aria-pressed", p.id === state.pay ? "true" : "false");
+    b.innerHTML = '<span class="dot" aria-hidden="true"></span><span><b>' + p.label + "</b><span>" + p.desc + "</span></span>";
+    b.addEventListener("click", function(){
+      state.pay = p.id;
+      payOpts.querySelectorAll(".pay-opt").forEach(function(el){ el.setAttribute("aria-pressed", el.dataset.pay === p.id ? "true" : "false"); });
+      render();
+    });
+    payOpts.appendChild(b);
+  });
+
+  function chipGroup(rowId, attr, apply){
+    var row = $(rowId);
+    row.querySelectorAll(".chip").forEach(function(chip){
+      chip.addEventListener("click", function(){
+        var val = chip.dataset[attr];
+        var isToggle = rowId === "addonRow";
+        if (isToggle){
+          var pressed = chip.getAttribute("aria-pressed") === "true";
+          chip.setAttribute("aria-pressed", pressed ? "false" : "true");
+          apply(val, !pressed);
+        } else {
+          row.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
+          apply(val);
+        }
+        render();
+      });
+    });
+  }
+  chipGroup("sizeRow", "size", function(v){ state.size = v; });
+  chipGroup("tierRow", "tier", function(v){ state.tier = v; });
+  chipGroup("timeRow", "time", function(v){ state.time = v; });
+  chipGroup("addonRow", "addon", function(v, on){
+    if (on){ state.addons.push(v); } else { state.addons = state.addons.filter(function(a){ return a !== v; }); }
+  });
+
+  function setPkg(key){
+    state.pkg = key;
+    pkgPick.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c.dataset.pkg === key ? "true" : "false"); });
+    $("ceramicField").hidden = !PACKAGES[key].ceramic;
+    render();
+  }
+  document.querySelectorAll("[data-book]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      setPkg(btn.dataset.book);
+      document.getElementById("book").scrollIntoView({behavior:"smooth"});
+    });
+  });
+
+  /* date */
+  var dateInput = $("fDate");
+  var today = new Date(); today.setHours(0,0,0,0);
+  function iso(d){ return d.toISOString().slice(0,10); }
+  dateInput.min = iso(today);
+  dateInput.addEventListener("change", function(){
+    state.date = dateInput.value;
+    var warn = $("weekendWarn");
+    if (state.date){
+      var d = new Date(state.date + "T12:00:00");
+      var day = d.getDay();
+      warn.classList.toggle("show", day === 0 || day === 6);
+    } else { warn.classList.remove("show"); }
+    render();
+  });
+
+  ["fName","fPhone","fVehicle","fNotes"].forEach(function(id){
+    $(id).addEventListener("input", render);
+  });
+
+  function fmtDate(v){
+    if (!v) return "Not picked yet";
+    return new Date(v + "T12:00:00").toLocaleDateString("en-US",{weekday:"short", month:"short", day:"numeric", year:"numeric"});
+  }
+  function payLabel(){
+    for (var i=0;i<PAYMENTS.length;i++){ if (PAYMENTS[i].id === state.pay) return PAYMENTS[i].label; }
+    return "";
+  }
+  function payHandle(){
+    if (state.pay === "cashapp") return "$CaseyGatwood";
+    if (state.pay === "paypal") return "1ridetohigh@gmail.com";
+    return "";
+  }
+  function payLink(){
+    if (state.pay === "cashapp") return "https://cash.app/$CaseyGatwood";
+    return "";
+  }
+  function copyText(text, btn){
+    function done(){
+      var old = btn.textContent;
+      btn.textContent = "Copied!";
+      btn.classList.add("pay-copied");
+      setTimeout(function(){ btn.textContent = old; btn.classList.remove("pay-copied"); }, 2400);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  }
+  function renderPayDetail(){
+    var box = $("payDetail");
+    if (state.pay === "cashapp"){
+      box.hidden = false;
+      box.innerHTML = '<b>Pay with Cash App</b><span class="handle">$CaseyGatwood</span><p><a href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener">cash.app/$CaseyGatwood</a> — tap below to open Cash App with our $Cashtag, or copy it. We\u2019ll confirm the amount with you when we confirm your booking.</p><div class="pay-actions"><a class="pay-open" href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener">Open Cash App</a><button type="button" class="pay-copy" id="payCopyBtn">Copy $Cashtag</button></div>';
+      $("payCopyBtn").addEventListener("click", function(){ copyText("$CaseyGatwood", this); });
+    } else if (state.pay === "paypal"){
+      box.hidden = false;
+      box.innerHTML = '<b>Pay with PayPal</b><span class="handle">1ridetohigh@gmail.com</span><p>Scan the QR code below with your phone to pay Casey Gatwood on PayPal, or send your payment to this email address in PayPal. We\u2019ll confirm the amount with you when we confirm your booking.</p><figure class="pay-qr"><img src="asset-037.jpg" alt="PayPal QR code for Casey Gatwood — scan to pay Clean Auto Details on PayPal" loading="lazy" /><figcaption>Scan to pay on PayPal — Casey Gatwood</figcaption></figure><div class="pay-actions"><a class="pay-open" href="https://www.paypal.com/" target="_blank" rel="noopener">Open PayPal</a><button type="button" class="pay-copy" id="payCopyBtn">Copy PayPal Email</button></div>';
+      $("payCopyBtn").addEventListener("click", function(){ copyText("1ridetohigh@gmail.com", this); });
+    } else if (state.pay === "venmo"){
+      box.hidden = false;
+      box.innerHTML = '<b>Pay with Venmo</b><p>Tap below to open our Venmo page, or copy the Venmo link. We\u2019ll confirm the amount with you when we confirm your booking.</p><div class="pay-actions"><a class="pay-open" href="https://venmo.com/code?user_id=3823967265621201508&created=1794030034" target="_blank" rel="noopener">Open Venmo</a><button type="button" class="pay-copy" id="payCopyBtn">Copy Venmo Link</button></div>';
+      $("payCopyBtn").addEventListener("click", function(){ copyText("https://venmo.com/code?user_id=3823967265621201508&created=1794030034", this); });
+    } else {
+      box.hidden = true;
+      box.innerHTML = "";
+    }
+  }
+  function summaryText(){
+    var p = PACKAGES[state.pkg];
+    var lines = [
+      "Booking request — Clean Auto Details",
+      "Package: " + p.note + " (" + p.price + ")"
+    ];
+    if (p.ceramic) lines.push("Ceramic tier: " + state.tier);
+    lines.push("Vehicle size: " + state.size);
+    lines.push("Add-ons: " + (state.addons.length ? state.addons.join("; ") : "None"));
+    lines.push("Preferred date: " + (state.date ? fmtDate(state.date) : "(not picked)"));
+    lines.push("Drop-off time: " + (state.time || "(not picked)"));
+    lines.push("Name: " + ($("fName").value.trim() || "(not given)"));
+    lines.push("Phone: " + ($("fPhone").value.trim() || "(not given)"));
+    lines.push("Vehicle: " + ($("fVehicle").value.trim() || "(not given)"));
+    if ($("fNotes").value.trim()) lines.push("Notes: " + $("fNotes").value.trim());
+    lines.push("Paying with: " + payLabel() + (payHandle() ? " (" + payHandle() + ")" : ""));
+    if (payLink()) lines.push("Cash App link: " + payLink());
+    lines.push("Estimated total: " + p.price + " (final price confirmed before work starts)");
+    return lines.join("\n");
+  }
+  function render(){
+    var p = PACKAGES[state.pkg];
+    $("sPkg").textContent = p.name;
+    $("sSize").textContent = state.size;
+    $("sTierRow").hidden = !p.ceramic;
+    if (p.ceramic) $("sTier").textContent = state.tier;
+    $("sAddons").textContent = state.addons.length ? state.addons.map(function(a){ return a.replace(/\s*\(.*\)\s*$/, ""); }).join(", ") : "None";
+    $("sDate").textContent = fmtDate(state.date);
+    $("sTime").textContent = state.time || "Not picked yet";
+    $("sPay").textContent = payLabel() + (payHandle() ? " — " + payHandle() : "");
+    $("sPrice").textContent = p.price;
+    renderPayDetail();
+    $("smsBtn").href = "sms:+19183299259?&body=" + encodeURIComponent(summaryText());
+  }
+  $("copyBtn").addEventListener("click", function(){
+    var text = summaryText();
+    function done(){ var m = $("copiedMsg"); m.classList.add("show"); setTimeout(function(){ m.classList.remove("show"); }, 3200); }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done, function(){ fallback(); });
+    } else { fallback(); }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); done(); } catch(e){}
+      document.body.removeChild(ta);
+    }
+  });
+  setPkg("wash");
+  render();
+})();
+
+/* ---------- merch ordering ---------- */
+(function(){
+  "use strict";
+  function pressedVal(card, selector, attr){
+    var el = card.querySelector(selector + ' .chip[aria-pressed="true"]');
+    return el ? el.getAttribute(attr) : "";
+  }
+  document.querySelectorAll(".merch-card").forEach(function(card){
+    var name = card.getAttribute("data-name");
+    var base = parseInt(card.getAttribute("data-base"), 10);
+    var p2 = parseInt(card.getAttribute("data-2xl") || "0", 10);
+    var p3 = parseInt(card.getAttribute("data-3xl") || "0", 10);
+    var priceEl = card.querySelector(".merch-price");
+    var orderBtn = card.querySelector(".merch-order");
+    var mainImg = card.querySelector(".merch-main");
+
+    function selectIn(group, chip){
+      group.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
+    }
+    card.querySelectorAll(".merch-sizes, .merch-colors").forEach(function(group){
+      group.querySelectorAll(".chip").forEach(function(chip){
+        chip.addEventListener("click", function(){ selectIn(group, chip); update(); });
+      });
+    });
+    card.querySelectorAll(".merch-thumb").forEach(function(thumb){
+      thumb.addEventListener("click", function(){
+        card.querySelectorAll(".merch-thumb").forEach(function(t){ t.setAttribute("aria-pressed", t === thumb ? "true" : "false"); });
+        if (mainImg){
+          mainImg.src = thumb.getAttribute("data-src");
+          mainImg.alt = thumb.getAttribute("data-alt");
+        }
+      });
+    });
+    function currentPrice(size){
+      if (size === "2XL" && p2) return p2;
+      if (size === "3XL" && p3) return p3;
+      return base;
+    }
+    function update(){
+      var hasSizes = !!card.querySelector(".merch-sizes");
+      var size = hasSizes ? pressedVal(card, ".merch-sizes", "data-size") : "";
+      var color = pressedVal(card, ".merch-colors", "data-color");
+      var price = currentPrice(size);
+      priceEl.textContent = "$" + price;
+      var lines = [
+        "Merch order — Clean Auto Details",
+        "Item: " + name
+      ];
+      if (hasSizes) lines.push("Size: " + size);
+      else lines.push("Size: One size");
+      lines.push("Color: " + color);
+      lines.push("Price: $" + price);
+      lines.push("Please confirm my order and how to pay. Thanks!");
+      orderBtn.href = "sms:+19183299259?&body=" + encodeURIComponent(lines.join("\n"));
+    }
+    update();
+  });
+})();
+</script>
+</body>
+</html>
