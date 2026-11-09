@@ -145,6 +145,11 @@
   nav.main{margin-left:auto;display:flex;gap:4px;align-items:center;flex-wrap:wrap}
   nav.main a{color:var(--ink-2);text-decoration:none;font-weight:600;font-size:.98rem;padding:8px 10px;border-radius:8px}
   nav.main a:hover{color:var(--ink);background:var(--surface-2)}
+  .nav-toggle{display:none;margin-left:8px;width:48px;height:48px;padding:0;border:2px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer;flex:none;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+  .nav-toggle span{display:block;width:24px;height:3px;border-radius:2px;background:var(--ink);transition:transform .18s ease,opacity .18s ease}
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;text-decoration:none;
     font-family:"Barlow Condensed",sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.07em;
     font-size:1.14rem;padding:14px 26px;border-radius:10px;line-height:1.1;transition:transform .15s ease, background .15s ease, box-shadow .15s ease}
@@ -157,7 +162,17 @@
   .btn-ghost:hover{border-color:var(--ink-3)}
   .btn-sm{font-size:1rem;padding:9px 16px}
   header.site .btn{margin-left:8px}
-  @media (max-width:760px){ nav.main{display:none} header.site .btn{margin-left:auto} header.site .btn-sm{font-size:.95rem;padding:8px 12px;letter-spacing:.04em} .wordmark{font-size:1.22rem} header.site .wrap{gap:10px;padding-left:14px;padding-right:14px} }
+  @media (max-width:760px){
+    .nav-toggle{display:inline-flex}
+    nav.main{display:none}
+    nav.main.open{display:flex;flex-direction:column;align-items:stretch;flex-basis:100%;order:3;margin-left:0;gap:2px;padding-top:10px}
+    nav.main.open a{padding:13px 12px;font-size:1.05rem;border-top:1px solid var(--line)}
+    header.site .wrap{flex-wrap:wrap}
+    header.site .btn{margin-left:auto}
+    header.site .btn-sm{font-size:.95rem;padding:8px 10px;letter-spacing:.04em}
+    .wordmark{font-size:1.12rem}
+    header.site .wrap{gap:10px;padding-left:14px;padding-right:14px}
+  }
 
   /* ---------- hero ---------- */
   .hero{position:relative;background:var(--dark-band);color:var(--dark-ink);overflow:hidden}
@@ -531,7 +546,7 @@
 <header class="site">
   <div class="wrap">
     <a class="wordmark" href="#top">Clean Auto <span>Details</span></a>
-    <nav class="main" aria-label="Site">
+    <nav class="main" id="site-nav" aria-label="Site">
       <a href="#packages">Packages</a>
       <a href="#quiz">Find Your Detail</a>
       <a href="#ceramic">Ceramic Coating</a>
@@ -544,6 +559,11 @@
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-amber btn-sm" href="#book">Book Now</a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
@@ -2152,6 +2172,32 @@
       board.appendChild(cell);
     }
   }
+})();
+</script>
+<script>
+(function(){
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('site-nav');
+  if (!toggle || !nav) return;
+  function closeMenu(){
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open menu');
+  }
+  toggle.addEventListener('click', function(){
+    var isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+  nav.addEventListener('click', function(e){
+    if (e.target.closest('a')) closeMenu();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeMenu();
+  });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 760) closeMenu();
+  });
 })();
 </script>
 </body>
