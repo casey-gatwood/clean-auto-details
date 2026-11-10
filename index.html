@@ -10,6 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="asset-146.css" />
 <style>
   :root{
     color-scheme: light dark;
@@ -228,6 +229,9 @@
   @media (prefers-color-scheme: dark){ .pkg .price{color:var(--accent)} }
   .pkg .price small{font-size:1rem;color:var(--ink-3);font-weight:500;text-transform:none;letter-spacing:0;font-family:"Barlow",sans-serif}
   .pkg .price-note{color:var(--ink-3);font-size:.9rem;margin:0 0 14px}
+  .pkg .pkg-time{display:flex;gap:9px;align-items:flex-start;background:var(--surface-2);border-radius:10px;padding:10px 13px;margin:0 0 16px;font-size:.96rem;color:var(--ink-2)}
+  .pkg .pkg-time svg{width:18px;height:18px;flex:none;margin-top:2px;fill:none;stroke:var(--accent-bright);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .pkg .pkg-time b{color:var(--ink)}
   .pkg ul{list-style:none;margin:0 0 20px;padding:0;flex:1}
   .pkg ul li{padding:7px 0 7px 26px;position:relative;color:var(--ink-2);border-top:1px solid var(--line);font-size:.99rem}
   .pkg ul li:first-child{border-top:0}
@@ -507,6 +511,36 @@
   .draw-open-list{margin-top:12px;color:var(--dark-ink-2)}
   .draw-open-list b{color:#fff}
 
+  /* ---------- about the shop ---------- */
+  .about-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+  @media (max-width:980px){ .about-facts{grid-template-columns:1fr 1fr} }
+  @media (max-width:640px){ .about-facts{grid-template-columns:1fr} }
+  .about-quote{margin:22px 0 0;font-size:1.18rem;line-height:1.55;color:#fff;max-width:760px}
+  .about-quote .stars{color:#f2a900;letter-spacing:.1em;margin-right:10px}
+  .about-quote-src{color:var(--dark-ink-2);font-size:.98rem;margin:8px 0 0}
+  .about-fact{background:var(--dark-band-2);border:1px solid #2a6aa8;border-radius:12px;padding:18px}
+  .about-fact b{font-family:"Barlow Condensed",sans-serif;font-size:1.9rem;line-height:1;text-transform:uppercase;display:block;color:#fff}
+  .about-fact span{color:var(--dark-ink-2);font-size:.95rem}
+
+  /* ---------- visit / contact map ---------- */
+  .visit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:34px;align-items:stretch}
+  @media (max-width:860px){ .visit-grid{grid-template-columns:1fr;gap:24px} }
+  .visit-list{list-style:none;margin:0 0 22px;padding:0}
+  .visit-list li{padding:11px 0;border-top:1px solid var(--line)}
+  .visit-list li:first-child{border-top:0;padding-top:2px}
+  .visit-list b{display:block;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:.82rem;color:var(--accent-strong);font-weight:600}
+  @media (prefers-color-scheme: dark){ .visit-list b{color:var(--accent)} }
+  .visit-list span,.visit-list a.val{font-size:1.12rem;font-weight:600;color:var(--ink);text-decoration:none}
+  .visit-list a.val:hover{text-decoration:underline}
+  .visit-actions{display:flex;flex-wrap:wrap;gap:10px}
+  @media (max-width:640px){ .visit-actions .btn{flex:1} }
+  .shop-map{height:420px;min-height:320px;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface-2)}
+  @media (max-width:860px){ .shop-map{height:340px} }
+  .map-fallback{display:none;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow)}
+  .map-fallback.show{display:block}
+  .map-fallback h3{font-size:1.5rem;margin-bottom:8px}
+  .map-fallback p{color:var(--ink-2);margin:0 0 16px}
+
   /* ---------- faq / footer ---------- */
   .faq{max-width:820px}
   details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px 22px;margin-bottom:12px}
@@ -548,15 +582,17 @@
     <a class="wordmark" href="#top">Clean Auto <span>Details</span></a>
     <nav class="main" id="site-nav" aria-label="Site">
       <a href="#packages">Packages</a>
+      <a href="#about">About</a>
       <a href="#quiz">Find Your Detail</a>
       <a href="#ceramic">Ceramic Coating</a>
       <a href="#more">More Services</a>
       <a href="#classics">Classics</a>
       <a href="#work">Our Work</a>
       <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#visit">Visit Us</a>
       <a href="#drawing">100 Spot Drawing</a>
       <a href="#merch">Merch</a>
-      <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-amber btn-sm" href="#book">Book Now</a>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
@@ -608,6 +644,25 @@
     </div>
   </div>
 
+  <!-- ABOUT THE SHOP -->
+  <section class="section dark-band" id="about" style="padding:64px 0">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:0">
+        <span class="tag">About the Shop</span>
+        <h2>The guy behind the shine</h2>
+        <p>Clean Auto Details is Casey&rsquo;s shop in Warner, Oklahoma. He&rsquo;s been detailing professionally since 2012 and started Clean Auto Details in January 2019 — and he still does the work himself, from a wash &amp; sealant to full paint correction and ceramic coating. For the last three years he&rsquo;s also been painting and doing bodywork, so the shop covers detailing, bodywork &amp; paint, and repair work under one roof. The same hands that quote your job are the ones that finish it, which is how the work on this page got done.</p>
+        <p class="about-quote"><span class="stars" aria-hidden="true">★★★★★</span>&ldquo;We&rsquo;re here to exceed your expectations. There&rsquo;s no better feeling then cruising in a fresh ride.&rdquo;</p>
+        <p class="about-quote-src">That&rsquo;s how the shop describes itself on Google — where it&rsquo;s rated 5.0 stars across 212 reviews.</p>
+      </div>
+      <div class="about-facts">
+        <div class="about-fact"><b>Since 2012</b><span>Detailing professionally</span></div>
+        <div class="about-fact"><b>Jan 2019</b><span>Clean Auto Details opened its doors</span></div>
+        <div class="about-fact"><b>3 Years</b><span>Painting &amp; doing bodywork</span></div>
+        <div class="about-fact"><b>5.0 Stars</b><span>Across 212 Google reviews</span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- PACKAGES -->
   <section class="section" id="packages">
     <div class="wrap">
@@ -635,6 +690,7 @@
           <h3>Quick Detail</h3>
           <div class="price">$100–$200</div>
           <p class="price-note">Priced by vehicle size</p>
+          <p class="pkg-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span><b>Takes about 1–3 hours</b> — drop it off and it&rsquo;s ready the same day.</span></p>
           <ul>
             <li>Full exterior wash</li>
             <li>Door jambs cleaned</li>
@@ -650,6 +706,7 @@
           <h3>Base Detail</h3>
           <div class="price">$200–$450</div>
           <p class="price-note">Priced by size &amp; condition</p>
+          <p class="pkg-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span><b>Takes about 2–6 hours</b>, depending on condition — plan on a good part of the day.</span></p>
           <ul>
             <li>Full exterior wash &amp; 30-day sealant</li>
             <li>Tire shine, wheels, inner fenders &amp; door jambs</li>
@@ -665,6 +722,7 @@
           <h3>Full Detail</h3>
           <div class="price">$600–$800</div>
           <p class="price-note">Priced by size &amp; condition</p>
+          <p class="pkg-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span><b>No set time</b> — the paint correction is never rushed, so timing depends on the paint.</span></p>
           <ul>
             <li>Everything in the Base Detail</li>
             <li>2-step paint correction / buffing</li>
@@ -677,6 +735,7 @@
           <h3>Full Buffing Service</h3>
           <div class="price">$800–$1,500</div>
           <p class="price-note">Priced by size &amp; condition</p>
+          <p class="pkg-time"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span><b>No set time</b> — when you&rsquo;re buffing, you don&rsquo;t rush it. It takes as long as the paint needs.</span></p>
           <ul>
             <li>Wet sanding where the paint needs it</li>
             <li>3-step paint correction / buffing</li>
@@ -1155,46 +1214,6 @@
     </div>
   </section>
 
-  <!-- 100 SPOT DRAWING -->
-  <section class="section dark-band" id="drawing">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="tag">100 Spot Drawing</span>
-        <h2>Your number could win the works</h2>
-        <p>We&rsquo;re filling 100 spots, and the spot number is the price — spot #1 costs $1, spot #47 costs $47, spot #100 costs $100. When all 100 spots are gone, we draw live and three people win.</p>
-        <p style="margin-top:18px"><span class="draw-badge">73 spots left</span></p>
-      </div>
-      <div class="draw-cols">
-        <div class="draw-card">
-          <h3>The prizes</h3>
-          <ul class="prize-list">
-            <li><span class="prize-place">1st</span><span><b>7-year ceramic coating</b> — plus any buffing needed to get the paint ready for it</span></li>
-            <li><span class="prize-place">2nd</span><span><b>Decon wash + 1-step polish</b> — topped with a 2-year ceramic coating</span></li>
-            <li><span class="prize-place">3rd</span><span><b>Base Detail</b> — our full inside-and-out detail</span></li>
-          </ul>
-          <p style="margin:14px 0 0">The winners are drawn live once all 100 spots are filled.</p>
-        </div>
-        <div class="draw-card">
-          <h3>How to enter</h3>
-          <ol class="draw-steps">
-            <li>Pick one or more open numbers from the board below.</li>
-            <li>Comment your numbers on the pinned post on our Facebook page so we can lock them in for you.</li>
-            <li>Pay for your spots: Cash App <a href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener">$CaseyGatwood</a>, PayPal <strong style="color:#fff">1ridetohigh@gmail.com</strong>, <a href="https://venmo.com/code?user_id=3823967265621201508&amp;created=1794030034" target="_blank" rel="noopener">Venmo</a>, or cash at the shop.</li>
-          </ol>
-          <a class="btn btn-amber" href="https://facebook.com/100063859501015/posts/pfbid09evWZvuYwaoVegEPM1vpSJeQ942RXP5cqPHe3mX5yktW8SnFQgWFt6XDrH9pR57kl/" target="_blank" rel="noopener">Comment on the Pinned Post</a>
-        </div>
-      </div>
-      <h3 style="color:#fff;font-size:1.55rem;margin-bottom:6px">The board — 73 spots still open</h3>
-      <p style="margin:0 0 16px">Blue numbers are still open, and each one costs exactly what it says. Struck-through numbers are already taken.</p>
-      <div class="draw-board" id="drawBoard" role="img" aria-label="Drawing board with numbers 1 to 100. 73 spots are still open: 17 through 19, 22 through 24, 26 through 29, 31 through 34, 36, 38 and 39, 41 through 43, 45 through 79, 81 through 89, and 91 through 99."></div>
-      <div class="draw-legend">
-        <span><span class="sw" style="background:var(--accent-bright)"></span>Open — yours for the price on it</span>
-        <span><span class="sw" style="background:rgba(255,255,255,.12)"></span>Taken</span>
-      </div>
-      <p class="draw-open-list"><b>Open numbers:</b> 17–19, 22–24, 26–29, 31–34, 36, 38–39, 41–43, 45–79, 81–89, 91–99.</p>
-    </div>
-  </section>
-
   <!-- REVIEWS -->
   <section class="section" id="reviews" style="padding-top:0">
     <div class="wrap">
@@ -1254,6 +1273,238 @@
       <div class="reviews-more">
         <a class="btn btn-amber" href="https://www.google.com/maps/place/Clean+Auto+Details,+414+3rd+Ave,+Warner,+OK+74469/@35.4827493,-95.3069986,15z/data=!4m6!3m5!1s0x87b5ed5e70effe4d:0x77a95fb2151c33e2!8m2!3d35.4827493!4d-95.3069986!16s%2Fg%2F11j355dksc" target="_blank" rel="noopener">See all our Google reviews</a>
       </div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section class="section" id="book" style="background:var(--bg-soft)">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Book &amp; Pay</span>
+        <h2>Book your appointment</h2>
+        <p>Build your booking below, then text it to us or call to confirm. We&rsquo;ll lock in your day, confirm the exact price for your vehicle, and arrange payment with the method you pick.</p>
+      </div>
+
+      <div class="book-shell">
+        <div class="panel">
+          <form id="bookForm" novalidate>
+            <fieldset>
+              <legend>1 · Choose a package</legend>
+              <div class="pkg-pick" id="pkgPick" role="group" aria-label="Package"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>2 · Vehicle size</legend>
+              <div class="chip-row" id="sizeRow" role="group" aria-label="Vehicle size">
+                <button type="button" class="chip" data-size="Car" aria-pressed="true">Car</button>
+                <button type="button" class="chip" data-size="Truck / SUV" aria-pressed="false">Truck / SUV</button>
+                <button type="button" class="chip" data-size="Large SUV / 3-Row" aria-pressed="false">Large SUV / 3-Row</button>
+              </div>
+              <p class="hint">Where your vehicle lands in the price range depends on its size and condition.</p>
+            </fieldset>
+
+            <fieldset id="ceramicField" hidden>
+              <legend>Ceramic coating tier</legend>
+              <div class="chip-row" id="tierRow" role="group" aria-label="Ceramic tier">
+                <button type="button" class="chip" data-tier="2-Year (1yr warranty)" aria-pressed="true">2-Year<span class="chip-note">1-year warranty</span></button>
+                <button type="button" class="chip" data-tier="5-Year (3yr warranty)" aria-pressed="false">5-Year<span class="chip-note">3-year warranty</span></button>
+                <button type="button" class="chip" data-tier="7-Year (5yr warranty)" aria-pressed="false">7-Year<span class="chip-note">5-year warranty</span></button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>3 · Add-ons</legend>
+              <div class="chip-row" id="addonRow" role="group" aria-label="Add-ons">
+                <button type="button" class="chip" data-addon="Headlight restoration (from $50/lens)" aria-pressed="false">Headlight Restoration<span class="chip-note">from $50 / lens</span></button>
+                <button type="button" class="chip" data-addon="Sound damping install (quote)" aria-pressed="false">Sound Damping Install<span class="chip-note">quoted</span></button>
+                <button type="button" class="chip" data-addon="Custom bodywork & paint (quote)" aria-pressed="false">Custom Bodywork &amp; Paint<span class="chip-note">quoted</span></button>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>4 · Pick a day &amp; time</legend>
+              <div class="form-grid">
+                <label class="f"><span>Date</span>
+                  <input type="date" id="fDate" />
+                </label>
+                <div>
+                  <span class="field-label" style="margin-bottom:6px">Drop-off time</span>
+                  <div class="chip-row" id="timeRow" role="group" aria-label="Drop-off time">
+                    <button type="button" class="chip" data-time="8:00 AM" aria-pressed="false">8:00 AM</button>
+                    <button type="button" class="chip" data-time="10:00 AM" aria-pressed="false">10:00 AM</button>
+                    <button type="button" class="chip" data-time="1:00 PM" aria-pressed="false">1:00 PM</button>
+                    <button type="button" class="chip" data-time="3:00 PM" aria-pressed="false">3:00 PM</button>
+                  </div>
+                </div>
+              </div>
+              <div class="warn" id="weekendWarn">We&rsquo;re open Monday–Friday, 8 AM–5 PM — that date falls on a weekend. Pick a weekday, or call us and we&rsquo;ll see what we can do.</div>
+              <p class="hint">Times are drop-off windows; we&rsquo;ll confirm your exact appointment when we reply.</p>
+            </fieldset>
+
+            <fieldset>
+              <legend>5 · Your details</legend>
+              <div class="form-grid">
+                <label class="f"><span>Your name</span>
+                  <input type="text" id="fName" autocomplete="name" placeholder="First and last name" />
+                </label>
+                <label class="f"><span>Your phone</span>
+                  <input type="tel" id="fPhone" autocomplete="tel" placeholder="So we can text you back" />
+                </label>
+                <label class="f full"><span>Vehicle (year, make, model)</span>
+                  <input type="text" id="fVehicle" placeholder="e.g. 2021 Ford F-150" />
+                </label>
+                <label class="f full"><span>Anything we should know? (optional)</span>
+                  <textarea id="fNotes" placeholder="Pet hair, stains, scratches you&rsquo;re worried about…"></textarea>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>6 · How would you like to pay?</legend>
+              <div class="pay-opts" id="payOpts" role="group" aria-label="Payment method"></div>
+              <div class="pay-detail" id="payDetail" hidden></div>
+              <p class="hint">No payment is taken on this page. When we confirm your booking by phone or text, we&rsquo;ll arrange payment with the method you choose — the balance is due when your vehicle is done.</p>
+            </fieldset>
+          </form>
+        </div>
+
+        <aside class="panel summary" aria-label="Booking summary">
+          <h3>Your Booking</h3>
+          <p class="sub">Updates as you choose.</p>
+          <dl>
+            <div class="row"><dt>Package</dt><dd id="sPkg">Wash &amp; Sealant</dd></div>
+            <div class="row"><dt>Vehicle size</dt><dd id="sSize">Car</dd></div>
+            <div class="row" id="sTierRow" hidden><dt>Ceramic tier</dt><dd id="sTier">2-Year</dd></div>
+            <div class="row"><dt>Add-ons</dt><dd id="sAddons">None</dd></div>
+            <div class="row"><dt>Date</dt><dd id="sDate">Not picked yet</dd></div>
+            <div class="row"><dt>Drop-off</dt><dd id="sTime">Not picked yet</dd></div>
+            <div class="row"><dt>Paying with</dt><dd id="sPay">Square (card)</dd></div>
+          </dl>
+          <div class="total">
+            <div class="row"><dt>Estimated total</dt><dd class="big" id="sPrice">$50–$125</dd></div>
+            <div class="row"><dt>Due today</dt><dd id="sDue">$0 — nothing charged here</dd></div>
+          </div>
+          <div class="actions">
+            <a class="btn btn-amber" id="smsBtn" href="sms:+19183299259">Text This Booking to Us</a>
+            <a class="btn btn-dark" href="tel:+19183299259">Call to Book &amp; Pay</a>
+            <button class="btn btn-ghost" type="button" id="copyBtn">Copy Booking Details</button>
+            <span class="copied-msg" id="copiedMsg" role="status">Copied — paste it anywhere to send it to us.</span>
+          </div>
+          <p class="fineprint">Your final price is confirmed before work starts, based on your vehicle&rsquo;s size and condition. Add-ons marked &ldquo;quoted&rdquo; are priced at drop-off. We accept Square, cash, Cash App, PayPal, and Venmo.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Good to Know</span>
+        <h2>Questions, answered</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Why is every price a range?</summary>
+          <p>A clean sedan and a work truck that hasn&rsquo;t been washed in a year aren&rsquo;t the same job. Each package is priced by your vehicle&rsquo;s size and condition, and we confirm your exact price with you before any work starts — the range on the package is the range you&rsquo;ll land in.</p>
+        </details>
+        <details>
+          <summary>How long will my vehicle be at the shop?</summary>
+          <p>A Quick Detail takes about <strong>1–3 hours</strong>, and a Base Detail runs <strong>2–6 hours</strong> depending on your vehicle&rsquo;s condition. Buffing and paint correction don&rsquo;t get a set time — when you&rsquo;re buffing, you don&rsquo;t want to rush anything, so correction work takes as long as the paint needs. We&rsquo;ll give you a realistic pickup time when you drop off.</p>
+        </details>
+        <details>
+          <summary>How do I pay?</summary>
+          <p>We accept <strong>Square</strong> (card), <strong>cash</strong>, <strong>Cash App</strong>, <strong>PayPal</strong>, and <strong>Venmo</strong>. Our Cash App is <a href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener"><strong>$CaseyGatwood</strong></a>, our PayPal is <strong>1ridetohigh@gmail.com</strong>, and you can <a href="https://venmo.com/code?user_id=3823967265621201508&amp;created=1794030034" target="_blank" rel="noopener"><strong>pay us on Venmo</strong></a>. Pick your preferred method when you book — nothing is charged on this page. When we confirm your appointment by phone or text, we&rsquo;ll arrange payment with that method, with the balance due when your vehicle is done.</p>
+          <figure class="faq-qr">
+            <img src="asset-037.jpg" alt="PayPal QR code for Casey Gatwood — scan to pay Clean Auto Details on PayPal" loading="lazy" />
+            <figcaption>Scan to pay on PayPal — Casey Gatwood</figcaption>
+          </figure>
+        </details>
+        <details>
+          <summary>What does the ceramic coating warranty cover?</summary>
+          <p>Our 2-year coating comes with a 1-year warranty, the 5-year coating with a 3-year warranty, and the 7-year coating with a 5-year warranty. We&rsquo;ll go over the warranty details for your tier when you book.</p>
+        </details>
+        <details>
+          <summary>Do you do work besides detailing?</summary>
+          <p>Yes — custom bodywork and paint jobs, sound damping installs, headlight restoration, and more. Those are quoted individually, so call <a href="tel:+19183299259">(918) 329-9259</a> or add them to your booking request and tell us what you need.</p>
+        </details>
+        <details>
+          <summary>Where are you, and when are you open?</summary>
+          <p>414 3rd Ave in Warner, Oklahoma — see the <a href="#visit">map and directions</a> below. We&rsquo;re open Monday through Friday, 8 AM to 5 PM.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISIT THE SHOP -->
+  <section class="section" id="visit" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Visit the Shop</span>
+        <h2>Find us in Warner</h2>
+        <p>We&rsquo;re right in Warner at 414 3rd Ave. Call or text ahead, drop your ride off, and we&rsquo;ll take it from there.</p>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <ul class="visit-list">
+            <li><b>Address</b><span>414 3rd Ave, Warner, OK 74469</span></li>
+            <li><b>Hours</b><span>Mon&ndash;Fri &middot; 8:00 AM &ndash; 5:00 PM</span></li>
+            <li><b>Call or Text</b><a class="val" href="tel:+19183299259">(918) 329-9259</a></li>
+          </ul>
+          <div class="visit-actions">
+            <a class="btn btn-amber" href="https://www.google.com/maps/dir/?api=1&destination=Clean%20Auto%20Details%2C%20414%203rd%20Ave%2C%20Warner%2C%20OK%2C%20US" target="_blank" rel="noopener">Get Directions</a>
+            <a class="btn btn-ghost" href="#book">Book an Appointment</a>
+          </div>
+        </div>
+        <div>
+          <div class="shop-map" id="shopMap" role="img" aria-label="Map showing Clean Auto Details at 414 3rd Ave, Warner, Oklahoma"></div>
+          <div class="map-fallback" id="mapFallback">
+            <h3>Clean Auto Details</h3>
+            <p>The map couldn&rsquo;t load here, but you can still find us: 414 3rd Ave, Warner, OK 74469 &mdash; open Mon&ndash;Fri, 8 AM to 5 PM.</p>
+            <a class="btn btn-amber" href="https://www.google.com/maps/dir/?api=1&destination=Clean%20Auto%20Details%2C%20414%203rd%20Ave%2C%20Warner%2C%20OK%2C%20US" target="_blank" rel="noopener">Get Directions</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 100 SPOT DRAWING -->
+  <section class="section dark-band" id="drawing">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">100 Spot Drawing</span>
+        <h2>Your number could win the works</h2>
+        <p>We&rsquo;re filling 100 spots, and the spot number is the price — spot #1 costs $1, spot #47 costs $47, spot #100 costs $100. When all 100 spots are gone, we draw live and three people win.</p>
+        <p style="margin-top:18px"><span class="draw-badge">73 spots left</span></p>
+      </div>
+      <div class="draw-cols">
+        <div class="draw-card">
+          <h3>The prizes</h3>
+          <ul class="prize-list">
+            <li><span class="prize-place">1st</span><span><b>7-year ceramic coating</b> — plus any buffing needed to get the paint ready for it</span></li>
+            <li><span class="prize-place">2nd</span><span><b>Decon wash + 1-step polish</b> — topped with a 2-year ceramic coating</span></li>
+            <li><span class="prize-place">3rd</span><span><b>Base Detail</b> — our full inside-and-out detail</span></li>
+          </ul>
+          <p style="margin:14px 0 0">The winners are drawn live once all 100 spots are filled.</p>
+        </div>
+        <div class="draw-card">
+          <h3>How to enter</h3>
+          <ol class="draw-steps">
+            <li>Pick one or more open numbers from the board below.</li>
+            <li>Comment your numbers on the pinned post on our Facebook page so we can lock them in for you.</li>
+            <li>Pay for your spots: Cash App <a href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener">$CaseyGatwood</a>, PayPal <strong style="color:#fff">1ridetohigh@gmail.com</strong>, <a href="https://venmo.com/code?user_id=3823967265621201508&amp;created=1794030034" target="_blank" rel="noopener">Venmo</a>, or cash at the shop.</li>
+          </ol>
+          <a class="btn btn-amber" href="https://facebook.com/100063859501015/posts/pfbid09evWZvuYwaoVegEPM1vpSJeQ942RXP5cqPHe3mX5yktW8SnFQgWFt6XDrH9pR57kl/" target="_blank" rel="noopener">Comment on the Pinned Post</a>
+        </div>
+      </div>
+      <h3 style="color:#fff;font-size:1.55rem;margin-bottom:6px">The board — 73 spots still open</h3>
+      <p style="margin:0 0 16px">Blue numbers are still open, and each one costs exactly what it says. Struck-through numbers are already taken.</p>
+      <div class="draw-board" id="drawBoard" role="img" aria-label="Drawing board with numbers 1 to 100. 73 spots are still open: 17 through 19, 22 through 24, 26 through 29, 31 through 34, 36, 38 and 39, 41 through 43, 45 through 79, 81 through 89, and 91 through 99."></div>
+      <div class="draw-legend">
+        <span><span class="sw" style="background:var(--accent-bright)"></span>Open — yours for the price on it</span>
+        <span><span class="sw" style="background:rgba(255,255,255,.12)"></span>Taken</span>
+      </div>
+      <p class="draw-open-list"><b>Open numbers:</b> 17–19, 22–24, 26–29, 31–34, 36, 38–39, 41–43, 45–79, 81–89, 91–99.</p>
     </div>
   </section>
 
@@ -1485,162 +1736,6 @@
 
       </div>
       <p class="merch-pay-note">Ordering by text is free and easy: we&rsquo;ll confirm your item, size, and color, then take payment with Cash App, PayPal, Venmo, Square, or cash. Questions? Call the shop at <a href="tel:+19183299259">(918) 329-9259</a>.</p>
-    </div>
-  </section>
-
-  <!-- BOOKING -->
-  <section class="section" id="book" style="background:var(--bg-soft)">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="tag">Book &amp; Pay</span>
-        <h2>Book your appointment</h2>
-        <p>Build your booking below, then text it to us or call to confirm. We&rsquo;ll lock in your day, confirm the exact price for your vehicle, and arrange payment with the method you pick.</p>
-      </div>
-
-      <div class="book-shell">
-        <div class="panel">
-          <form id="bookForm" novalidate>
-            <fieldset>
-              <legend>1 · Choose a package</legend>
-              <div class="pkg-pick" id="pkgPick" role="group" aria-label="Package"></div>
-            </fieldset>
-
-            <fieldset>
-              <legend>2 · Vehicle size</legend>
-              <div class="chip-row" id="sizeRow" role="group" aria-label="Vehicle size">
-                <button type="button" class="chip" data-size="Car" aria-pressed="true">Car</button>
-                <button type="button" class="chip" data-size="Truck / SUV" aria-pressed="false">Truck / SUV</button>
-                <button type="button" class="chip" data-size="Large SUV / 3-Row" aria-pressed="false">Large SUV / 3-Row</button>
-              </div>
-              <p class="hint">Where your vehicle lands in the price range depends on its size and condition.</p>
-            </fieldset>
-
-            <fieldset id="ceramicField" hidden>
-              <legend>Ceramic coating tier</legend>
-              <div class="chip-row" id="tierRow" role="group" aria-label="Ceramic tier">
-                <button type="button" class="chip" data-tier="2-Year (1yr warranty)" aria-pressed="true">2-Year<span class="chip-note">1-year warranty</span></button>
-                <button type="button" class="chip" data-tier="5-Year (3yr warranty)" aria-pressed="false">5-Year<span class="chip-note">3-year warranty</span></button>
-                <button type="button" class="chip" data-tier="7-Year (5yr warranty)" aria-pressed="false">7-Year<span class="chip-note">5-year warranty</span></button>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend>3 · Add-ons</legend>
-              <div class="chip-row" id="addonRow" role="group" aria-label="Add-ons">
-                <button type="button" class="chip" data-addon="Headlight restoration (from $50/lens)" aria-pressed="false">Headlight Restoration<span class="chip-note">from $50 / lens</span></button>
-                <button type="button" class="chip" data-addon="Sound damping install (quote)" aria-pressed="false">Sound Damping Install<span class="chip-note">quoted</span></button>
-                <button type="button" class="chip" data-addon="Custom bodywork & paint (quote)" aria-pressed="false">Custom Bodywork &amp; Paint<span class="chip-note">quoted</span></button>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend>4 · Pick a day &amp; time</legend>
-              <div class="form-grid">
-                <label class="f"><span>Date</span>
-                  <input type="date" id="fDate" />
-                </label>
-                <div>
-                  <span class="field-label" style="margin-bottom:6px">Drop-off time</span>
-                  <div class="chip-row" id="timeRow" role="group" aria-label="Drop-off time">
-                    <button type="button" class="chip" data-time="8:00 AM" aria-pressed="false">8:00 AM</button>
-                    <button type="button" class="chip" data-time="10:00 AM" aria-pressed="false">10:00 AM</button>
-                    <button type="button" class="chip" data-time="1:00 PM" aria-pressed="false">1:00 PM</button>
-                    <button type="button" class="chip" data-time="3:00 PM" aria-pressed="false">3:00 PM</button>
-                  </div>
-                </div>
-              </div>
-              <div class="warn" id="weekendWarn">We&rsquo;re open Monday–Friday, 8 AM–5 PM — that date falls on a weekend. Pick a weekday, or call us and we&rsquo;ll see what we can do.</div>
-              <p class="hint">Times are drop-off windows; we&rsquo;ll confirm your exact appointment when we reply.</p>
-            </fieldset>
-
-            <fieldset>
-              <legend>5 · Your details</legend>
-              <div class="form-grid">
-                <label class="f"><span>Your name</span>
-                  <input type="text" id="fName" autocomplete="name" placeholder="First and last name" />
-                </label>
-                <label class="f"><span>Your phone</span>
-                  <input type="tel" id="fPhone" autocomplete="tel" placeholder="So we can text you back" />
-                </label>
-                <label class="f full"><span>Vehicle (year, make, model)</span>
-                  <input type="text" id="fVehicle" placeholder="e.g. 2021 Ford F-150" />
-                </label>
-                <label class="f full"><span>Anything we should know? (optional)</span>
-                  <textarea id="fNotes" placeholder="Pet hair, stains, scratches you&rsquo;re worried about…"></textarea>
-                </label>
-              </div>
-            </fieldset>
-
-            <fieldset>
-              <legend>6 · How would you like to pay?</legend>
-              <div class="pay-opts" id="payOpts" role="group" aria-label="Payment method"></div>
-              <div class="pay-detail" id="payDetail" hidden></div>
-              <p class="hint">No payment is taken on this page. When we confirm your booking by phone or text, we&rsquo;ll arrange payment with the method you choose — the balance is due when your vehicle is done.</p>
-            </fieldset>
-          </form>
-        </div>
-
-        <aside class="panel summary" aria-label="Booking summary">
-          <h3>Your Booking</h3>
-          <p class="sub">Updates as you choose.</p>
-          <dl>
-            <div class="row"><dt>Package</dt><dd id="sPkg">Wash &amp; Sealant</dd></div>
-            <div class="row"><dt>Vehicle size</dt><dd id="sSize">Car</dd></div>
-            <div class="row" id="sTierRow" hidden><dt>Ceramic tier</dt><dd id="sTier">2-Year</dd></div>
-            <div class="row"><dt>Add-ons</dt><dd id="sAddons">None</dd></div>
-            <div class="row"><dt>Date</dt><dd id="sDate">Not picked yet</dd></div>
-            <div class="row"><dt>Drop-off</dt><dd id="sTime">Not picked yet</dd></div>
-            <div class="row"><dt>Paying with</dt><dd id="sPay">Square (card)</dd></div>
-          </dl>
-          <div class="total">
-            <div class="row"><dt>Estimated total</dt><dd class="big" id="sPrice">$50–$125</dd></div>
-            <div class="row"><dt>Due today</dt><dd id="sDue">$0 — nothing charged here</dd></div>
-          </div>
-          <div class="actions">
-            <a class="btn btn-amber" id="smsBtn" href="sms:+19183299259">Text This Booking to Us</a>
-            <a class="btn btn-dark" href="tel:+19183299259">Call to Book &amp; Pay</a>
-            <button class="btn btn-ghost" type="button" id="copyBtn">Copy Booking Details</button>
-            <span class="copied-msg" id="copiedMsg" role="status">Copied — paste it anywhere to send it to us.</span>
-          </div>
-          <p class="fineprint">Your final price is confirmed before work starts, based on your vehicle&rsquo;s size and condition. Add-ons marked &ldquo;quoted&rdquo; are priced at drop-off. We accept Square, cash, Cash App, PayPal, and Venmo.</p>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section" id="faq">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="tag">Good to Know</span>
-        <h2>Questions, answered</h2>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>Why is every price a range?</summary>
-          <p>A clean sedan and a work truck that hasn&rsquo;t been washed in a year aren&rsquo;t the same job. Each package is priced by your vehicle&rsquo;s size and condition, and we confirm your exact price with you before any work starts — the range on the package is the range you&rsquo;ll land in.</p>
-        </details>
-        <details>
-          <summary>How do I pay?</summary>
-          <p>We accept <strong>Square</strong> (card), <strong>cash</strong>, <strong>Cash App</strong>, <strong>PayPal</strong>, and <strong>Venmo</strong>. Our Cash App is <a href="https://cash.app/$CaseyGatwood" target="_blank" rel="noopener"><strong>$CaseyGatwood</strong></a>, our PayPal is <strong>1ridetohigh@gmail.com</strong>, and you can <a href="https://venmo.com/code?user_id=3823967265621201508&amp;created=1794030034" target="_blank" rel="noopener"><strong>pay us on Venmo</strong></a>. Pick your preferred method when you book — nothing is charged on this page. When we confirm your appointment by phone or text, we&rsquo;ll arrange payment with that method, with the balance due when your vehicle is done.</p>
-          <figure class="faq-qr">
-            <img src="asset-037.jpg" alt="PayPal QR code for Casey Gatwood — scan to pay Clean Auto Details on PayPal" loading="lazy" />
-            <figcaption>Scan to pay on PayPal — Casey Gatwood</figcaption>
-          </figure>
-        </details>
-        <details>
-          <summary>What does the ceramic coating warranty cover?</summary>
-          <p>Our 2-year coating comes with a 1-year warranty, the 5-year coating with a 3-year warranty, and the 7-year coating with a 5-year warranty. We&rsquo;ll go over the warranty details for your tier when you book.</p>
-        </details>
-        <details>
-          <summary>Do you do work besides detailing?</summary>
-          <p>Yes — custom bodywork and paint jobs, sound damping installs, headlight restoration, and more. Those are quoted individually, so call <a href="tel:+19183299259">(918) 329-9259</a> or add them to your booking request and tell us what you need.</p>
-        </details>
-        <details>
-          <summary>Where are you, and when are you open?</summary>
-          <p>414 3rd Ave in Warner, Oklahoma. We&rsquo;re open Monday through Friday, 8 AM to 5 PM.</p>
-        </details>
-      </div>
     </div>
   </section>
 
@@ -2198,6 +2293,34 @@
   window.addEventListener('resize', function(){
     if (window.innerWidth > 760) closeMenu();
   });
+})();
+</script>
+<script src="asset-147.javascript"></script>
+<script src="asset-148.javascript"></script>
+<script>
+(function(){
+  var el = document.getElementById('shopMap');
+  var fb = document.getElementById('mapFallback');
+  function showFallback(){
+    if (el) el.style.display = 'none';
+    if (fb) fb.classList.add('show');
+  }
+  if (!el || typeof MapHelpers === 'undefined' || typeof HatchMaps === 'undefined'){ showFallback(); return; }
+  var shop = {
+    label: 'Clean Auto Details',
+    address: '414 3rd Ave',
+    locality: 'Warner',
+    region: 'OK',
+    country: 'US',
+    lat: 35.48274457,
+    lng: -95.30699428
+  };
+  MapHelpers.mountMap(el, {
+    places: [shop],
+    center: { lat: shop.lat, lng: shop.lng },
+    zoom: 15,
+    baseStyle: 'light'
+  }, showFallback);
 })();
 </script>
 </body>
