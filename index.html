@@ -541,6 +541,47 @@
   .map-fallback h3{font-size:1.5rem;margin-bottom:8px}
   .map-fallback p{color:var(--ink-2);margin:0 0 16px}
 
+  /* ---------- gift cards ---------- */
+  .gift-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:24px}
+  @media (max-width:980px){ .gift-grid{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:560px){ .gift-grid{grid-template-columns:1fr 1fr} .gift-card:last-child{grid-column:1/-1} }
+  .gift-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:24px 18px;box-shadow:var(--shadow);display:flex;flex-direction:column;text-align:center}
+  .gift-amount{font-family:"Barlow Condensed",sans-serif;font-size:2.55rem;font-weight:700;line-height:1;color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){ .gift-amount{color:var(--accent)} }
+  .gift-card p{color:var(--ink-2);font-size:.94rem;line-height:1.5;margin:10px 0 18px;flex:1}
+  .gift-card .btn{width:100%;padding-left:8px;padding-right:8px}
+
+  /* ---------- fresh out of the shop ---------- */
+  .fresh-tag{background:var(--accent-bright)}
+
+  /* ---------- detailing tips ---------- */
+  .tips-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:860px){ .tips-grid{grid-template-columns:1fr} }
+  .tip-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 26px;box-shadow:var(--shadow)}
+  .tip-card h3{font-size:1.52rem;margin-bottom:10px}
+  .tip-card p{color:var(--ink-2);margin:0 0 12px}
+  .tip-card p:last-child{margin-bottom:0}
+  .tip-card ul{list-style:none;margin:0 0 12px;padding:0}
+  .tip-card ul li{padding:6px 0 6px 26px;position:relative;color:var(--ink-2);font-size:.99rem}
+  .tip-card ul li::before{content:"";position:absolute;left:2px;top:13px;width:12px;height:7px;border-left:3px solid var(--accent-bright);border-bottom:3px solid var(--accent-bright);transform:rotate(-45deg)}
+  .tip-card ul li b{color:var(--ink)}
+
+  /* ---------- refer a friend ---------- */
+  .refer-box{max-width:900px;margin:0 auto;background:var(--surface);border:2px solid var(--accent-bright);border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);padding:42px 36px;text-align:center}
+  @media (max-width:640px){ .refer-box{padding:32px 22px} }
+  .refer-box .tag{justify-content:center}
+  .refer-box h2{font-size:clamp(2.1rem,4.6vw,3.1rem)}
+  .refer-box h2 .amt{color:var(--accent-strong)}
+  @media (prefers-color-scheme: dark){ .refer-box h2 .amt{color:var(--accent)} }
+  .refer-box .refer-lede{color:var(--ink-2);font-size:1.08rem;max-width:640px;margin:14px auto 0}
+  .refer-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:26px 0 4px;text-align:left}
+  @media (max-width:560px){ .refer-cols{grid-template-columns:1fr} }
+  .refer-col{background:var(--surface-2);border-radius:12px;padding:18px 20px}
+  .refer-col b{display:block;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:1.25rem;color:var(--ink);margin-bottom:4px}
+  .refer-col span{color:var(--ink-2);font-size:.97rem}
+  .refer-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+  .refer-fine{color:var(--ink-3);font-size:.92rem;margin:16px 0 0}
+
   /* ---------- faq / footer ---------- */
   .faq{max-width:820px}
   details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:4px 22px;margin-bottom:12px}
@@ -582,15 +623,18 @@
     <a class="wordmark" href="#top">Clean Auto <span>Details</span></a>
     <nav class="main" id="site-nav" aria-label="Site">
       <a href="#packages">Packages</a>
+      <a href="#giftcards">Gift Cards</a>
       <a href="#about">About</a>
       <a href="#visit">Visit Us</a>
       <a href="#quiz">Find Your Detail</a>
       <a href="#ceramic">Ceramic Coating</a>
       <a href="#more">More Services</a>
       <a href="#classics">Classics</a>
+      <a href="#fresh">Fresh Out of the Shop</a>
       <a href="#work">Our Work</a>
       <a href="#reviews">Reviews</a>
       <a href="#faq">FAQ</a>
+      <a href="#tips">Detailing Tips</a>
       <a href="#drawing">100 Spot Drawing</a>
       <a href="#merch">Merch</a>
     </nav>
@@ -838,6 +882,45 @@
           <figure><img src="asset-126.jpg" alt="Black and white Bayliner VR5 outdoors on gravel, buffed to a mirror shine" loading="lazy" /></figure>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- GIFT CARDS -->
+  <section class="section" id="giftcards" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Holiday Gift Cards</span>
+        <h2>Give the gift of a clean ride</h2>
+        <p>Stuck on what to get the car person in your life? A Clean Auto Details gift card puts a real detail under the tree — no guessing sizes, no wrapping a vacuum. Pick an amount below and text us to order; we&rsquo;ll confirm it with you and take payment with Cash App, PayPal, Venmo, Square, or cash — same as a booking. Nothing is charged on this page.</p>
+      </div>
+      <div class="gift-grid">
+        <article class="gift-card">
+          <div class="gift-amount">$50</div>
+          <p>Covers a Wash &amp; Sealant — our packages start at $50.</p>
+          <a class="btn btn-dark btn-sm" href="sms:+19183299259?&amp;body=Hi!%20I%20would%20like%20to%20buy%20a%20%2450%20gift%20card%20from%20Clean%20Auto%20Details.">Text to Order</a>
+        </article>
+        <article class="gift-card">
+          <div class="gift-amount">$100</div>
+          <p>A Quick Detail starts at $100 — a full wash, vacuum, and glass.</p>
+          <a class="btn btn-dark btn-sm" href="sms:+19183299259?&amp;body=Hi!%20I%20would%20like%20to%20buy%20a%20%24100%20gift%20card%20from%20Clean%20Auto%20Details.">Text to Order</a>
+        </article>
+        <article class="gift-card">
+          <div class="gift-amount">$200</div>
+          <p>A Base Detail — our full inside-and-out detail — starts at $200.</p>
+          <a class="btn btn-dark btn-sm" href="sms:+19183299259?&amp;body=Hi!%20I%20would%20like%20to%20buy%20a%20%24200%20gift%20card%20from%20Clean%20Auto%20Details.">Text to Order</a>
+        </article>
+        <article class="gift-card">
+          <div class="gift-amount">$300</div>
+          <p>Covers a Base Detail on most vehicles, or a strong head start on a Full Detail.</p>
+          <a class="btn btn-dark btn-sm" href="sms:+19183299259?&amp;body=Hi!%20I%20would%20like%20to%20buy%20a%20%24300%20gift%20card%20from%20Clean%20Auto%20Details.">Text to Order</a>
+        </article>
+        <article class="gift-card">
+          <div class="gift-amount">$500</div>
+          <p>Most of the way to a Full Detail — or a big chunk of a ceramic coating.</p>
+          <a class="btn btn-dark btn-sm" href="sms:+19183299259?&amp;body=Hi!%20I%20would%20like%20to%20buy%20a%20%24500%20gift%20card%20from%20Clean%20Auto%20Details.">Text to Order</a>
+        </article>
+      </div>
+      <p class="merch-pay-note" style="margin-top:0">Just text us the amount and who it&rsquo;s for, and we&rsquo;ll get the card set up for you. Gift cards can go toward any package or service we offer. Questions? Call the shop at <a href="tel:+19183299259">(918) 329-9259</a>.</p>
     </div>
   </section>
 
@@ -1143,6 +1226,61 @@
         <div class="ba-handle" id="baHandle" aria-hidden="true"><span class="ba-knob"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5 4 12l5.5 6.5M14.5 5.5 20 12l-5.5 6.5"/></svg></span></div>
       </div>
       <p class="ba-caption" id="baCaption">Blue Kia Sorento, Oct 16, 2026 — an orange-brown spill across the rear carpet, cleaned out.</p>
+    </div>
+  </section>
+
+  <!-- FRESH OUT OF THE SHOP -->
+  <section class="section" id="fresh" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Fresh Out of the Shop</span>
+        <h2>The latest rides to roll out</h2>
+        <p>The most recent finished jobs at Clean Auto Details in Warner — newest first. When a ride rolls out of the shop, it lands here.</p>
+      </div>
+      <!-- FRESH FEED: to add a new finished job, copy one article below, paste it at the TOP of this grid, and swap in the new photo, vehicle, and what was done. -->
+      <div class="work-grid">
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-005.jpg" alt="Blue Kia Sorento rear carpet after a full interior detail — the orange-brown spill cleaned out, Oct 16, 2026" loading="lazy" /><span class="ba-tag after fresh-tag">Just Finished</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Blue Kia Sorento — Full Interior Detail</h3>
+            <p>Oct 16, 2026. A full interior cleaning that took out an orange-brown spill across the rear carpet — headliner, carpet, seats, and glass all finished clean.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-013.jpg" alt="White Ram 1500 with a glossy black roof, parked outside the shop after its two-tone tuxedo paint job, Oct 11, 2026" loading="lazy" /><span class="ba-tag after fresh-tag">Just Finished</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>White Ram 1500 — Tuxedo Paint Job</h3>
+            <p>Finished Oct 11, 2026. A two-tone &ldquo;tuxedo&rdquo; paint job done in-house — glossy black roof over the white body.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-018.jpg" alt="Black Pontiac Trans Am rolling out of the shop garage after a fresh paint job" loading="lazy" /><span class="ba-tag after fresh-tag">Just Finished</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>Black Pontiac Trans Am — Fresh Paint</h3>
+            <p>Fresh paint job, fresh out of the shop — a classic black Trans Am brought back to a deep gloss. See the full paint job video in <a href="#classics">Classics</a>.</p>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="work-media cols-1">
+            <figure class="ba"><img src="asset-001.jpg" alt="Casey hand-washing the grille of a white Ford F-150 at the shop" loading="lazy" /><span class="ba-tag after fresh-tag">Just Finished</span></figure>
+          </div>
+          <div class="work-body">
+            <h3>White Ford F-150 — Hand Wash</h3>
+            <p>A full hand wash at the shop, grille to tailgate — Casey on the mitt himself. Watch the wash in <a href="#work">Our Work</a> below.</p>
+          </div>
+        </article>
+
+      </div>
     </div>
   </section>
 
@@ -1468,6 +1606,70 @@
     </div>
   </section>
 
+  <!-- DETAILING TIPS -->
+  <section class="section" id="tips" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">From the Shop</span>
+        <h2>Detailing tips</h2>
+        <p>Straight answers from the shop floor in Warner, Oklahoma — the same advice we give our own customers for keeping a detail looking good between visits.</p>
+      </div>
+      <div class="tips-grid">
+
+        <article class="tip-card">
+          <h3>How to wash your car without scratching the paint</h3>
+          <p>Most swirl marks don&rsquo;t come from driving — they come from washing. Dirt dragged across paint with a dirty mitt or a rough sponge acts like sandpaper. Here&rsquo;s how we do it at the shop:</p>
+          <ul>
+            <li><b>Rinse first.</b> Knock the loose dirt and grit off with water before anything touches the paint.</li>
+            <li><b>Use two buckets</b> — one with car-wash soap, one with clean rinse water. Dunk the mitt in the rinse bucket between panels so the grit stays out of your soap.</li>
+            <li><b>Wash top to bottom</b> with a soft microfiber mitt, and save the wheels and rocker panels — the dirtiest parts — for last, with a separate mitt or brush.</li>
+            <li><b>Dry with a clean microfiber towel.</b> Skip the bath towel and the dish soap; both are hard on paint and strip off wax and sealant.</li>
+            <li><b>Wash in the shade</b> when you can, so soap and water don&rsquo;t dry on the paint and leave spots.</li>
+          </ul>
+          <p>Done right, a hand wash keeps your paint swirl-free and your sealant lasting longer. Rather leave it to us? A <a href="#packages">Wash &amp; Sealant</a> at the shop starts at $50.</p>
+        </article>
+
+        <article class="tip-card">
+          <h3>How to keep a ceramic coating looking new</h3>
+          <p>A ceramic coating is tough, but it isn&rsquo;t maintenance-free. The good news: coated cars are easier to keep clean — dirt and water don&rsquo;t stick the way they do on bare paint. A few habits keep that glossy, just-coated look going for years:</p>
+          <ul>
+            <li><b>Wash it regularly by hand</b> with a pH-neutral car soap. Harsh detergents and degreasers wear a coating down faster.</li>
+            <li><b>Skip the automatic brush wash.</b> Spinning brushes are the fastest way to dull and swirl a coated car.</li>
+            <li><b>Dry it after washing.</b> Letting hard water dry on the surface leaves mineral spots that sit on top of the coating.</li>
+            <li><b>Don&rsquo;t wax over it.</b> A coating doesn&rsquo;t need wax — and layering products on top can mute the slick finish you paid for.</li>
+            <li><b>Get bird droppings and bug splatter off soon.</b> A coating resists them better than wax, but nothing should bake on in the Oklahoma sun.</li>
+          </ul>
+          <p>Our coatings run 2, 5, and 7 years with written warranties — see the <a href="#ceramic">ceramic coating packages</a> for the tiers.</p>
+        </article>
+
+        <article class="tip-card">
+          <h3>Headlight care: keep your lenses clear</h3>
+          <p>Headlight lenses are plastic, and years of sun slowly oxidize them — that&rsquo;s the yellow, cloudy haze you see on older cars and trucks. It&rsquo;s not just looks: a hazed lens throws less light on the road at night.</p>
+          <ul>
+            <li><b>Wash the lenses gently</b> when you wash the car, with the same soap and a soft mitt — no scouring pads or harsh chemicals.</li>
+            <li><b>Park in the shade or a garage</b> when you can. UV is what yellows lenses, so less sun means slower hazing.</li>
+            <li><b>Watch for the early signs</b> — a slight milkiness or yellow tint at the top of the lens. Catching it early makes restoration quicker and cheaper.</li>
+          </ul>
+          <p>Once a lens is cloudy, home remedies don&rsquo;t last. Our <a href="#more">headlight restoration</a> polishes the lens back to clear — from $50 per lens — and it&rsquo;s one of the biggest before-and-afters we do.</p>
+        </article>
+
+        <article class="tip-card">
+          <h3>Interior care: keep the inside feeling new</h3>
+          <p>Interiors go downhill a little at a time — grit in the carpet, dust in the vents, a spill that never quite got cleaned. Small habits between details make a big difference:</p>
+          <ul>
+            <li><b>Vacuum regularly.</b> Sand and grit ground into carpet and seat seams wear the fibers down like sandpaper.</li>
+            <li><b>Blot spills right away.</b> The longer a spill sits — especially in summer heat — the more likely it sets in as a stain and a smell.</li>
+            <li><b>Wipe down the dash and doors</b> with a damp microfiber cloth. Skip the greasy dressings; a clean, matte finish is how it left the factory.</li>
+            <li><b>Treat leather gently.</b> A non-greasy leather conditioner keeps it from drying and cracking without making the seats slick.</li>
+            <li><b>Don&rsquo;t forget the glass.</b> The inside of the windshield builds up a film that glares at night — clean it with glass cleaner and a fresh microfiber.</li>
+          </ul>
+          <p>When it needs more than upkeep, our <a href="#packages">Base Detail</a> is a full interior cleaning — headliner, carpet, dash, doors, seats, and vents.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
   <!-- 100 SPOT DRAWING -->
   <section class="section dark-band" id="drawing">
     <div class="wrap">
@@ -1736,6 +1938,26 @@
 
       </div>
       <p class="merch-pay-note">Ordering by text is free and easy: we&rsquo;ll confirm your item, size, and color, then take payment with Cash App, PayPal, Venmo, Square, or cash. Questions? Call the shop at <a href="tel:+19183299259">(918) 329-9259</a>.</p>
+    </div>
+  </section>
+
+  <!-- REFER A FRIEND -->
+  <section class="section" id="refer" style="padding-top:0">
+    <div class="wrap">
+      <div class="refer-box">
+        <span class="tag">Refer a Friend</span>
+        <h2>You both get <span class="amt">$25 off</span></h2>
+        <p class="refer-lede">Know somebody whose ride needs some love? Send them our way. When your friend books a detail and mentions your name, you each save $25 — word of mouth is our best advertising, and this is our way of saying thanks.</p>
+        <div class="refer-cols">
+          <div class="refer-col"><b>Your friend gets $25 off</b><span>Their detail, when they book and mention your name.</span></div>
+          <div class="refer-col"><b>You get $25 off</b><span>Your next detail at the shop — any package.</span></div>
+        </div>
+        <div class="refer-actions">
+          <a class="btn btn-amber" href="sms:+19183299259?&amp;body=Hi!%20I%20would%20like%20to%20claim%20the%20refer-a-friend%20%2425%20off%20deal.">Text to Claim — (918) 329-9259</a>
+          <a class="btn btn-ghost" href="tel:+19183299259">Call the Shop</a>
+        </div>
+        <p class="refer-fine">Text us your name and your friend&rsquo;s name to claim it — we&rsquo;ll note the $25 off for both of you.</p>
+      </div>
     </div>
   </section>
 
