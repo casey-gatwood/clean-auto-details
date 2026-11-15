@@ -813,7 +813,7 @@
             <li>All glass done to a crystal-clear view</li>
             <li>Plastic &amp; leather treated with a non-greasy product</li>
           </ul>
-          <button class="btn btn-amber" type="button" data-book="base">Book This Package</button>
+          <button class="btn btn-amber" type="button" data-book="baseSmall">Book This Package</button>
         </article>
 
         <article class="pkg">
@@ -2085,7 +2085,9 @@
   var PACKAGES = {
     wash:      {name:"Wash & Sealant",        price:"$50–$125",     note:"Wash & 30-day sealant"},
     quick:     {name:"Quick Detail",          price:"$100–$200",    note:"Quick Detail"},
-    base:      {name:"Base Detail",           price:"$200–$450",    note:"Base Detail"},
+    baseSmall: {name:"Base Detail — Small",   price:"$200",         note:"Base Detail — Small — cars, coupes, sedans", detail:"Cars, coupes, sedans"},
+    baseMedium:{name:"Base Detail — Medium",  price:"$300",         note:"Base Detail — Medium — small SUVs, mid-size trucks", detail:"Small SUVs, mid-size trucks"},
+    baseLarge: {name:"Base Detail — Large",   price:"$400",         note:"Base Detail — Large — full-size SUVs, full-size trucks, vans", detail:"Full-size SUVs, full-size trucks, vans"},
     full:      {name:"Full Detail",           price:"$600–$800",    note:"Full Detail (incl. 2-step correction)"},
     buffing:   {name:"Full Buffing Service",  price:"$800–$1,500",  note:"Full Buffing Service"},
     ceramic:   {name:"Ceramic Coating",       price:"$800–$2,500",  note:"Ceramic Coating", ceramic:true},
@@ -2110,7 +2112,7 @@
     var b = document.createElement("button");
     b.type = "button"; b.className = "chip"; b.dataset.pkg = key;
     b.setAttribute("aria-pressed", key === state.pkg ? "true" : "false");
-    b.innerHTML = p.name + '<span class="chip-note">' + p.price + "</span>";
+    b.innerHTML = p.name + '<span class="chip-note">' + p.price + (p.detail ? " · " + p.detail : "") + "</span>";
     b.addEventListener("click", function(){ setPkg(key); });
     pkgPick.appendChild(b);
   });
@@ -2156,6 +2158,8 @@
   });
 
   function setPkg(key){
+    if (key === "base") key = "baseSmall";
+    if (!PACKAGES[key]) key = "wash";
     state.pkg = key;
     pkgPick.querySelectorAll(".chip").forEach(function(c){ c.setAttribute("aria-pressed", c.dataset.pkg === key ? "true" : "false"); });
     $("ceramicField").hidden = !PACKAGES[key].ceramic;
@@ -2449,7 +2453,7 @@
     var RESULTS = {
       wash:     { name:"Wash & Sealant",        price:"$50–$125",      pkg:"wash",     blurb:"A full exterior wash with a 30-day paint sealant, tires shined, and wheels and inner fenders cleaned — everything your ride needs to look right again." },
       quick:    { name:"Quick Detail",          price:"$100–$200",     pkg:"quick",    blurb:"A full exterior wash plus door jambs cleaned, a full vacuum, an interior wipe-down, and all glass cleaned — the full freshen-up." },
-      base:     { name:"Base Detail",           price:"$200–$450",     pkg:"base",     blurb:"Our full inside-and-out detail: a wash and 30-day sealant outside, and a complete interior cleaning — headliner, carpet, dash, doors, seats, and vents." },
+      base:     { name:"Base Detail",           price:"$200 / $300 / $400 by size", pkg:"baseSmall", blurb:"Our full inside-and-out detail: a wash and 30-day sealant outside, and a complete interior cleaning — headliner, carpet, dash, doors, seats, and vents. Priced by size: Small $200 (cars, coupes, sedans), Medium $300 (small SUVs, mid-size trucks), Large $400 (full-size SUVs, full-size trucks, vans)." },
       full:     { name:"Full Detail",           price:"$600–$800",     pkg:"full",     blurb:"Everything in the Base Detail, plus a 2-step paint correction to take out swirls and light scratches, topped with a 1-year paint sealant." },
       buffing:  { name:"Full Buffing Service",  price:"$800–$1,500",   pkg:"buffing",  blurb:"For paint that needs real correction: wet sanding where it\u2019s needed, a 3-step paint correction, and a 2-year ceramic coating on top." },
       ceramic:  { name:"Ceramic Coating",       price:"$800–$2,500",   pkg:"ceramic",  blurb:"Years of protection, backed by a warranty. Pick a 2, 5, or 7-year coating when you book and we\u2019ll confirm the exact price for your vehicle." },
@@ -2515,7 +2519,12 @@
           var book = document.createElement("button");
           book.type = "button"; book.className = "btn btn-amber"; book.textContent = "Book This Package";
           book.addEventListener("click", function(){
-            var chip = document.querySelector('#pkgPick .chip[data-pkg="' + r.pkg + '"]');
+            var pkgKey = r.pkg;
+            if (pkgKey === "baseSmall"){
+              if (answers.vehicle === "truck") pkgKey = "baseMedium";
+              else if (answers.vehicle === "large") pkgKey = "baseLarge";
+            }
+            var chip = document.querySelector('#pkgPick .chip[data-pkg="' + pkgKey + '"]');
             if (chip) chip.click();
             var sizeVal = answers.vehicle === "truck" ? "Truck / SUV" : (answers.vehicle === "large" ? "Large SUV / 3-Row" : "Car");
             var sizeChip = document.querySelector('#sizeRow .chip[data-size="' + sizeVal + '"]');
