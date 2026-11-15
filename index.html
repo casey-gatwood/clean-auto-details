@@ -257,6 +257,38 @@
   .boat-card .ba-pair figure{margin:0;border-radius:10px;overflow:hidden}
   .boat-card .ba-pair img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
 
+  /* ---------- service details (what each service does) ---------- */
+  .svc-section{background:var(--bg-soft)}
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media (max-width:860px){ .svc-grid{grid-template-columns:1fr} }
+  .svc-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .svc-card.wide{grid-column:1/-1}
+  .svc-card.featured{border:2px solid var(--accent-bright);box-shadow:var(--shadow-lg)}
+  .svc-card h3{font-size:1.62rem}
+  .svc-meta{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+  .svc-meta span{background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:.92rem;font-weight:600;color:var(--ink-2)}
+  .svc-meta span b{color:var(--accent-strong);font-family:"Barlow Condensed",sans-serif;font-size:1.05rem;letter-spacing:.02em}
+  @media (prefers-color-scheme: dark){ .svc-meta span b{color:var(--accent)} }
+  .svc-label{font-family:"Barlow Condensed",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.07em;font-size:.95rem;color:var(--ink);margin:18px 0 8px}
+  .svc-card ul{list-style:none;margin:0;padding:0}
+  .svc-card ul li{padding:6px 0 6px 26px;position:relative;color:var(--ink-2);font-size:.99rem}
+  .svc-card ul li::before{content:"";position:absolute;left:2px;top:13px;width:12px;height:7px;border-left:3px solid var(--accent-bright);border-bottom:3px solid var(--accent-bright);transform:rotate(-45deg)}
+  .svc-card ul li b{color:var(--ink)}
+  .svc-benefit{color:var(--ink-2);margin:0;font-size:1rem;line-height:1.6}
+  .svc-benefit b{color:var(--ink)}
+  .svc-split{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;margin-top:6px}
+  @media (max-width:860px){ .svc-split{grid-template-columns:1fr;gap:8px} }
+  .svc-split p{color:var(--ink-2);margin:0 0 12px;line-height:1.6}
+  .svc-split p b{color:var(--ink)}
+  .svc-tiers{display:grid;gap:8px;margin:0 0 14px}
+  .svc-tier{display:flex;justify-content:space-between;align-items:baseline;gap:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:9px;padding:10px 14px}
+  .svc-tier .t-name{font-weight:700;color:var(--ink)}
+  .svc-tier .t-price{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:1.3rem;color:var(--accent-strong);white-space:nowrap}
+  @media (prefers-color-scheme: dark){ .svc-tier .t-price{color:var(--accent)} }
+  .svc-cure{background:var(--warn-bg);color:var(--warn-ink);border-radius:10px;padding:14px 16px;font-size:.98rem;line-height:1.55}
+  .svc-cure b{display:block;font-family:"Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:1.05rem;margin-bottom:3px}
+  .svc-quote-link{margin-top:auto;padding-top:18px;font-weight:600}
+
   /* ---------- split feature rows ---------- */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
   @media (max-width:860px){ .split{grid-template-columns:1fr;gap:26px} }
@@ -640,6 +672,7 @@
     <a class="wordmark" href="#top">Clean Auto <span>Details</span></a>
     <nav class="main" id="site-nav" aria-label="Site">
       <a href="#packages">Packages</a>
+      <a href="#service-details">Service Details</a>
       <a href="#giftcards">Gift Cards</a>
       <a href="#about">About</a>
       <a href="#visit">Visit Us</a>
@@ -904,6 +937,151 @@
           <figure><img src="asset-126.jpg" alt="Black and white Bayliner VR5 outdoors on gravel, buffed to a mirror shine" loading="lazy" /></figure>
         </div>
       </article>
+    </div>
+  </section>
+
+  <!-- SERVICE DETAILS — WHAT EACH SERVICE DOES -->
+  <section class="section svc-section" id="service-details">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">About Our Services</span>
+        <h2>What each service does — and what you get out of it</h2>
+        <p>The packages above give you the price. This is the full story: exactly what&rsquo;s included in each service, what it does for your vehicle, and why it&rsquo;s worth doing. No surprises — just the work, spelled out.</p>
+      </div>
+
+      <div class="svc-grid">
+
+        <article class="svc-card">
+          <h3>Wash &amp; 30-Day Sealant</h3>
+          <div class="svc-meta"><span><b>$50–$125</b></span><span>Takes about <b>1 hour</b></span></div>
+          <p class="svc-label">What&rsquo;s included</p>
+          <ul>
+            <li>Full exterior wash</li>
+            <li>30-day paint sealant</li>
+            <li>Tires shined</li>
+            <li>Wheels and inner fenders cleaned</li>
+          </ul>
+          <p class="svc-label">What it does for your ride</p>
+          <p class="svc-benefit">This is the proper reset for a dirty exterior. The wash takes the road grime, bugs, and brake dust off the paint, wheels, and inner fenders — the spots a drive-through wash misses — and the tires are dressed so they look deep black again, not gray. The 30-day sealant lays a protective layer over the paint that keeps it glossy and makes dirt and water let go easier, so the vehicle stays cleaner longer and the next wash goes faster.</p>
+        </article>
+
+        <article class="svc-card">
+          <h3>Quick Detail</h3>
+          <div class="svc-meta"><span><b>$100–$200</b></span><span>Takes about <b>1–3 hours</b></span></div>
+          <p class="svc-label">What&rsquo;s included</p>
+          <ul>
+            <li>Full exterior wash</li>
+            <li>Door jams cleaned</li>
+            <li>Vacuum</li>
+            <li>Interior wipe down</li>
+            <li>All glass cleaned</li>
+          </ul>
+          <p class="svc-label">What it does for your ride</p>
+          <p class="svc-benefit">A full refresh inside and out, without the time a full detail takes. Outside, you get the same full exterior wash. Inside, the carpets and seats are vacuumed out, every surface is wiped down, and all the glass is cleaned — and the door jams are done too, so there&rsquo;s no dirty edge greeting you every time you open a door. It&rsquo;s the right call for a daily driver that&rsquo;s gotten away from you, or to keep a clean vehicle clean between bigger details.</p>
+        </article>
+
+        <article class="svc-card">
+          <h3>Base Detail</h3>
+          <div class="svc-meta"><span>Small <b>$200</b> · cars, coupes, sedans</span><span>Medium <b>$300</b> · small SUVs, mid-size trucks</span><span>Large <b>$400</b> · full-size SUVs, full-size trucks, vans</span><span>Takes <b>2–6 hours</b>, depending on condition</span></div>
+          <p class="svc-label">What&rsquo;s included</p>
+          <ul>
+            <li>Full exterior wash</li>
+            <li>30-day sealant</li>
+            <li>Tire shine</li>
+            <li>Wheels and inner fenders cleaned</li>
+            <li>Door jams cleaned</li>
+            <li>Exterior plastic shined and restored</li>
+            <li>Full interior cleaning — headliner, carpet, dash, doors, seats, ventilation system, and all glass</li>
+            <li>All plastic and leather treated with a non-greasy product</li>
+          </ul>
+          <p class="svc-label">What it does for your ride</p>
+          <p class="svc-benefit">Our full inside-and-out detail — the one that makes a vehicle feel new again. Outside, the paint gets washed and sealed, the wheels and fenders are cleaned out, and faded exterior plastic is shined and restored instead of left chalky. Inside, nothing is skipped: headliner to carpet, dash, doors, and seats all get a full cleaning, the ventilation system is cleaned so the air coming out of the vents is fresh, and every piece of glass is finished clear. Plastic and leather are treated with a non-greasy product, so surfaces look rich and protected without feeling slick or shiny-greasy to the touch.</p>
+        </article>
+
+        <article class="svc-card">
+          <h3>Full Detail</h3>
+          <div class="svc-meta"><span><b>$600–$800</b></span></div>
+          <p class="svc-label">What&rsquo;s included</p>
+          <ul>
+            <li>Everything in the Base Detail</li>
+            <li>2-step paint correction / buffing</li>
+            <li>Topped with a 1-year paint sealant</li>
+          </ul>
+          <p class="svc-label">What it does for your ride</p>
+          <p class="svc-benefit">Everything the Base Detail does, plus the paint itself gets corrected. The 2-step correction and buffing works the swirl marks, light scratches, and dull, hazy finish out of the paint — not covered up, but polished out — so the color comes back deep and glossy. Then it&rsquo;s topped with a 1-year paint sealant, a full year of protection over that corrected paint instead of 30 days. This is the package for paint that&rsquo;s lost its shine and an interior that needs the full treatment too.</p>
+        </article>
+
+        <article class="svc-card">
+          <h3>Full Buffing</h3>
+          <div class="svc-meta"><span><b>$800–$1,500</b></span><span><b>No fixed time</b> — buffing is never rushed</span></div>
+          <p class="svc-label">What&rsquo;s included</p>
+          <ul>
+            <li>Wet sanding</li>
+            <li>3-step paint correction / buffing</li>
+            <li>Topped with a 2-year ceramic coating</li>
+          </ul>
+          <p class="svc-label">What it does for your ride</p>
+          <p class="svc-benefit">The most intensive paint work we do, for paint that needs more than a standard correction. Wet sanding levels out the deeper defects first, then the 3-step correction and buffing brings the finish back step by step to a deep, mirror gloss. When the paint is right, it&rsquo;s topped with a 2-year ceramic coating to lock it in. Buffing has no fixed time — it takes as long as the paint needs, and we don&rsquo;t rush it.</p>
+        </article>
+
+        <article class="svc-card">
+          <h3>Headlight Restoration</h3>
+          <div class="svc-meta"><span><b>$50</b> per lens</span></div>
+          <p class="svc-label">What it does for your ride</p>
+          <p class="svc-benefit">Cloudy, yellowed, hazy lenses are restored back to clear. You get better light output on the road at night — you can see further, and other drivers can see you — and the front end of the vehicle looks years younger for it. It can be added to any detail or booked on its own.</p>
+        </article>
+
+        <article class="svc-card featured wide">
+          <h3>Ceramic Coating</h3>
+          <div class="svc-meta"><span>2-year <b>$800</b></span><span>5-year <b>$1,200</b></span><span>7-year <b>$1,600</b></span><span>Vehicle stays at the shop <b>3 days total</b></span></div>
+          <div class="svc-split">
+            <div>
+              <p class="svc-label" style="margin-top:14px">What ceramic coating is</p>
+              <p>Ceramic coating is a liquid coating applied over your vehicle&rsquo;s paint that cures into a hard, long-lasting protective layer bonded to the surface. Wax and sealants sit on top of the paint and wear off in weeks or months — a ceramic coating becomes part of the finish and protects it for <b>years</b>, which is why the packages are measured in years, not days.</p>
+              <p class="svc-label">The benefits</p>
+              <ul>
+                <li><b>Long-lasting paint protection</b> — years of protection from one application, not weeks</li>
+                <li><b>Water and dirt slide off</b> — rain beads up and rolls off, and grime has a harder time sticking</li>
+                <li><b>Easier washing</b> — because dirt doesn&rsquo;t bond to the surface the way it does on bare paint</li>
+                <li><b>Deep gloss</b> — that wet, just-detailed shine stays locked in</li>
+                <li><b>Protection from UV and the elements</b> — the coating stands between your paint and the sun, weather, and road grime that fade and dull it</li>
+              </ul>
+            </div>
+            <div>
+              <p class="svc-label" style="margin-top:14px">Pick your years</p>
+              <div class="svc-tiers">
+                <div class="svc-tier"><span class="t-name">2-Year Coating</span><span class="t-price">$800</span></div>
+                <div class="svc-tier"><span class="t-name">5-Year Coating</span><span class="t-price">$1,200</span></div>
+                <div class="svc-tier"><span class="t-name">7-Year Coating</span><span class="t-price">$1,600</span></div>
+              </div>
+              <div class="svc-cure"><b>Plan on 3 days at the shop</b>The coating needs a full 48 hours to fully cure, so your vehicle stays with us for 3 days total. That cure time is what lets the coating harden and bond properly — it&rsquo;s not something we can shortcut, and it&rsquo;s a big part of why the protection lasts for years.</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="svc-card">
+          <h3>Boat Detailing &amp; Buffing</h3>
+          <div class="svc-meta"><span><b>Call or text for a quote</b></span></div>
+          <p class="svc-label">What it does for your boat</p>
+          <p class="svc-benefit">Boats get the same detailing and buffing care as the vehicles — the work is quoted individually, because size and condition decide what a boat needs. Call or text us about yours and we&rsquo;ll give you a straight quote before any work starts.</p>
+          <p class="svc-quote-link"><a href="tel:+19183299259">Call (918) 329-9259</a> · <a href="sms:+19183299259">Text the shop</a></p>
+        </article>
+
+        <article class="svc-card">
+          <h3>Custom Bodywork, Paint &amp; More</h3>
+          <div class="svc-meta"><span><b>Priced per job</b></span><span><b>Call or text for a quote</b></span></div>
+          <p class="svc-label">What&rsquo;s available</p>
+          <ul>
+            <li>Custom bodywork and paint</li>
+            <li>Sound damping installs</li>
+            <li>And more — if it&rsquo;s not listed, ask</li>
+          </ul>
+          <p class="svc-label">How it works</p>
+          <p class="svc-benefit">Jobs like these don&rsquo;t fit a package price, so each one is priced per job. Bring us the project or send us photos, we&rsquo;ll talk through the work with you, and you&rsquo;ll know the price before anything starts.</p>
+          <p class="svc-quote-link"><a href="tel:+19183299259">Call (918) 329-9259</a> · <a href="sms:+19183299259">Text the shop</a></p>
+        </article>
+
+      </div>
     </div>
   </section>
 
