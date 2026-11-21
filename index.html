@@ -2024,7 +2024,7 @@
         <span class="tag">100 Spot Drawing</span>
         <h2>Your number could win the works</h2>
         <p>We&rsquo;re filling 100 spots, and the spot number is the price — spot #1 costs $1, spot #47 costs $47, spot #100 costs $100. When all 100 spots are gone, we draw live and three people win.</p>
-        <p style="margin-top:18px"><span class="draw-badge">61 spots left</span></p>
+        <p style="margin-top:18px"><span class="draw-badge">60 spots left</span></p>
       </div>
       <div class="draw-cols">
         <div class="draw-card">
@@ -2046,14 +2046,14 @@
           <a class="btn btn-amber" href="https://facebook.com/100063859501015/posts/pfbid09evWZvuYwaoVegEPM1vpSJeQ942RXP5cqPHe3mX5yktW8SnFQgWFt6XDrH9pR57kl/" target="_blank" rel="noopener">Comment on the Pinned Post</a>
         </div>
       </div>
-      <h3 style="color:#fff;font-size:1.55rem;margin-bottom:6px">The board — 61 spots still open</h3>
+      <h3 style="color:#fff;font-size:1.55rem;margin-bottom:6px">The board — 60 spots still open</h3>
       <p style="margin:0 0 16px">Blue numbers are still open, and each one costs exactly what it says. Struck-through numbers are already taken.</p>
-      <div class="draw-board" id="drawBoard" role="img" aria-label="Drawing board with numbers 1 to 100. 61 spots are still open: 18, 24, 26, 27 and 29, 31, 32 and 34, 36, 38 and 39, 41 and 43, 45 through 54, 56, 58 through 64, 67 through 76, 78 and 79, 81 through 89, and 91 through 99."></div>
+      <div class="draw-board" id="drawBoard" role="img" aria-label="Drawing board with numbers 1 to 100. 60 spots are still open: 18, 24, 26, 27 and 29, 31, 32 and 34, 36, 38 and 39, 41 and 43, 45 through 49, 51 through 54, 56, 58 through 64, 67 through 76, 78 and 79, 81 through 89, and 91 through 99."></div>
       <div class="draw-legend">
         <span><span class="sw" style="background:var(--accent-bright)"></span>Open — yours for the price on it</span>
         <span><span class="sw" style="background:rgba(255,255,255,.12)"></span>Taken</span>
       </div>
-      <p class="draw-open-list"><b>Open numbers:</b> 18, 24, 26–27, 29, 31–32, 34, 36, 38–39, 41, 43, 45–54, 56, 58–64, 67–76, 78–79, 81–89, 91–99.</p>
+      <p class="draw-open-list"><b>Open numbers:</b> 18, 24, 26–27, 29, 31–32, 34, 36, 38–39, 41, 43, 45–49, 51–54, 56, 58–64, 67–76, 78–79, 81–89, 91–99.</p>
     </div>
   </section>
 
@@ -2842,7 +2842,7 @@
   var board = document.getElementById("drawBoard");
   if (board){
     var open = {};
-    [[18,18],[24,24],[26,27],[29,29],[31,32],[34,34],[36,36],[38,39],[41,41],[43,43],[45,54],[56,56],[58,64],[67,76],[78,79],[81,89],[91,99]].forEach(function(range){
+    [[18,18],[24,24],[26,27],[29,29],[31,32],[34,34],[36,36],[38,39],[41,41],[43,43],[45,49],[51,54],[56,56],[58,64],[67,76],[78,79],[81,89],[91,99]].forEach(function(range){
       for (var n = range[0]; n <= range[1]; n++) open[n] = true;
     });
     for (var i = 1; i <= 100; i++){
